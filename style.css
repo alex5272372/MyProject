@@ -1,0 +1,11 @@
+.outer {
+    line-height: 120px;
+    height: 120px;
+    border: 1px solid blue;
+}
+.inner {
+    display: inline-block; /* центрировать..*/
+    vertical-align: middle;  /* ..по вертикали */
+    line-height: 1.25; /* переопределить высоту строки на обычную */
+    border: 1px solid red;
+}

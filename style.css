@@ -1,11 +1,10 @@
-.outer {
-    line-height: 120px;
-    height: 120px;
-    border: 1px solid blue;
+a {
+    color: #16a085;
 }
-.inner {
-    display: inline-block; /* центрировать..*/
-    vertical-align: middle;  /* ..по вертикали */
-    line-height: 1.25; /* переопределить высоту строки на обычную */
-    border: 1px solid red;
+.menu {
+    font-family: Roboto, Arial;
+    font-size: 18px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 600;
+    line-height: 60px;/* Приближение из-за подстановки шрифтов */
+    text-align: center;
 }

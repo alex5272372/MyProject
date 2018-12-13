@@ -1,10 +1,13 @@
 a {
     color: #16a085;
+    text-decoration: none;
+}
+.wrap {
+    font-family: Roboto, Arial;
+    text-align: center;
 }
 .menu {
-    font-family: Roboto, Arial;
     font-size: 18px;/* Приближение из-за подстановки шрифтов */
     font-weight: 600;
     line-height: 60px;/* Приближение из-за подстановки шрифтов */
-    text-align: center;
 }

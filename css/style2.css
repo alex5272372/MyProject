@@ -1,0 +1,10 @@
+.basic-div {
+    background-color: #a98;
+    border: 3px solid black;
+    border-color: #f00 #0f0;
+    margin: 30px;
+    padding: 20px;
+    width: 400px;
+    box-sizing: border-box;
+    display: inline-block;
+}

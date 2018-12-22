@@ -1,6 +1,20 @@
+SSH
+---
+$ sudo apt install openssh-server
+$ sudo nano /etc/ssh/sshd_config
+
+X11Forwarding yes
+
+$ sudo service sshd start
+$ sudo service sshd stop
+$ sudo service sshd status
+
+$ ssh localhost
+$ ssh alexey@136.144.210.108
 ----------------------------------------------------------------
+
 Install and Configure VNC server on Ubuntu 18.04:
-----------------------------------------------------------------
+-------------------------------------------------
 $ sudo apt update
 $ sudo apt install xfce4 xfce4-goodies
 $ sudo apt install tightvncserver
@@ -16,6 +30,17 @@ startxfce4 &
 $ sudo chmod +x ~/.vnc/xstartup
 $ vncserver
 ----------------------------------------------------------------
+
 Download TightVNC Viewer for Windows:
 https://www.tightvnc.com/
+----------------------------------------------------------------
+
+Packages
+--------
+$ sudo apt-get update
+$ sudo apt-get upgrade
+
+$ dpkg --list
+$ sudo apt-get install nautilus
+$ sudo apt-get remove nautilus
 ----------------------------------------------------------------

@@ -25,7 +25,7 @@ $ nano ~/.vnc/xstartup
 
 #!/bin/bash
 xrdb $HOME/.Xresources
-startxfce4 &
+startlxde &
 
 $ sudo chmod +x ~/.vnc/xstartup
 $ vncserver

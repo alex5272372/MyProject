@@ -1,0 +1,38 @@
+body{
+    text-align: center;
+}
+.background{
+    background-image: url(../img/background.png);
+    width: 1066px;
+    height: 768px;
+    font-family: Arial, serif;
+    color: white;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 150px;
+}
+.header{
+    padding: 40px 0;
+}
+.logo{
+    float: left;
+}
+.logo-image{
+    float: left;
+}
+.logo-first-line{
+
+}
+.logo-second-line{
+
+}
+.contact{
+
+}
+.main{
+
+}
+.footer{
+    font-size: 14px;
+    line-height: 40px;
+}

@@ -14,17 +14,35 @@ body{
 .header{
     padding: 40px 0;
 }
-.logo{
+.logo-link{
     float: left;
 }
-.logo-image{
+.logo-link:hover .logo-image{
+    margin-left: -46px;
+}
+.logo-link:hover .logo-first-line,.logo-link:hover .logo-second-line{
+    color: #f26522;
+}
+.logo-view{
+    width: 46px;
+    height: 44px;
+    overflow: hidden;
     float: left;
+    margin-right: 15px;
+}
+.logo-first-line,.logo-second-line{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 .logo-first-line{
-
+    font-size: 26px;
+    line-height: 26px;
 }
 .logo-second-line{
-
+    font-size: 16px;
+    line-height: 18px;
 }
 .contact{
 

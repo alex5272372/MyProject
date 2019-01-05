@@ -50,6 +50,34 @@ body{
 .main{
 
 }
+.section-link{
+    display: block;
+    float: left;
+}
+.section-view{
+    width: 312px;
+    height: 204px;
+}
+.section-image{
+    width: 308px;
+    height: 200px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to top, black, white) 1%;
+}
+.section-price{
+    background-color: #f26522;
+    width: 312px;
+    height: 64px;
+}
+.section-price-from{
+    font-size: 10px;
+}
+.section-price-50{
+    font-size: 20px;
+}
+.section-price-details{
+    font-size: 14px;
+}
 .footer{
     font-size: 14px;
     line-height: 40px;

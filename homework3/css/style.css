@@ -6,21 +6,23 @@ body{
     width: 1066px;
     height: 768px;
     font-family: Arial, serif;
-    color: white;
     font-weight: 400;
     margin: 0 auto;
     padding: 0 150px;
 }
 .header{
     padding: 40px 0;
+    text-align: right;
 }
 .logo-link{
     float: left;
+    color: white;
+    text-decoration: none;
 }
 .logo-link:hover .logo-image{
     margin-left: -46px;
 }
-.logo-link:hover .logo-first-line,.logo-link:hover .logo-second-line{
+.logo-link:hover .logo-first-line,.logo-link:hover .logo-second-line,.section-link:hover .section-name{
     color: #f26522;
 }
 .logo-view{
@@ -45,18 +47,31 @@ body{
     line-height: 18px;
 }
 .contact{
-
-}
-.main{
-
+    color: white;
+    text-decoration: none;
+    text-align: right;
 }
 .section-link{
-    display: block;
     float: left;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+.section-margin{
+    margin-right: 65px;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 .section-view{
     width: 312px;
     height: 204px;
+    position: relative;
+    overflow: hidden;
 }
 .section-image{
     width: 308px;
@@ -64,10 +79,18 @@ body{
     border: 2px solid transparent;
     border-image: linear-gradient(to top, black, white) 1%;
 }
-.section-price{
+.section-link .section-price {
     background-color: #f26522;
-    width: 312px;
-    height: 64px;
+    text-align: left;
+    padding: 12px 20px;
+    width: 272px;
+    height: 40px;
+    position: absolute;
+    top: 204px;
+    transition: all 0.5s linear;
+}
+.section-link:hover .section-price{
+    top: 140px;
 }
 .section-price-from{
     font-size: 10px;
@@ -76,9 +99,15 @@ body{
     font-size: 20px;
 }
 .section-price-details{
-    font-size: 14px;
+    font-size: 16px;
+    float: right;
+}
+.section-price-details:after{
+    content: " >";
 }
 .footer{
+    color: white;
     font-size: 14px;
     line-height: 40px;
+    clear: left;
 }

@@ -11,7 +11,7 @@ body{
     padding: 0 150px;
 }
 .header{
-    padding: 40px 0;
+    padding-top: 50px;
     text-align: right;
 }
 .logo-link{
@@ -22,17 +22,21 @@ body{
 .logo-link:hover .logo-image{
     margin-left: -46px;
 }
-.logo-link:hover .logo-first-line,.logo-link:hover .logo-second-line,.section-link:hover .section-name{
+.logo-link:hover .logo-first-line,
+.logo-link:hover .logo-second-line,
+.section-link:hover .section-name{
     color: #f26522;
 }
 .logo-view{
+    display: block;
     width: 46px;
     height: 44px;
     overflow: hidden;
     float: left;
-    margin-right: 15px;
+    margin: 2px 15px 0 0;
 }
-.logo-first-line,.logo-second-line{
+.logo-first-line,
+.logo-second-line{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -40,38 +44,34 @@ body{
 }
 .logo-first-line{
     font-size: 26px;
-    line-height: 26px;
 }
 .logo-second-line{
     font-size: 16px;
-    line-height: 18px;
 }
 .contact{
     color: white;
+    font-size: 18px;
     text-decoration: none;
     text-align: right;
+}
+.main{
+    margin-top: 50px;
 }
 .section-link{
     float: left;
     color: white;
     text-decoration: none;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 .section-margin{
     margin-right: 65px;
-}
-.clearfix:after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
 }
 .section-view{
     width: 312px;
     height: 204px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 .section-image{
     width: 308px;
@@ -105,9 +105,18 @@ body{
 .section-price-details:after{
     content: " >";
 }
+.section-name{
+    font-size: 18px;
+}
 .footer{
     color: white;
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 12px;
     clear: left;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }

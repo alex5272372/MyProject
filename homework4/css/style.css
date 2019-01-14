@@ -28,7 +28,7 @@
     display: inline-block;
     width: 30px;
     height: 20px;
-    margin-right: 15px;
+    margin-right: 13px;
     background-image: url("../img/icons.png");
     background-repeat: no-repeat;
     transition: all 0.2s ease-out;
@@ -51,7 +51,8 @@
     color: white;
     font-size: 14px;
     vertical-align: text-top;
-    margin-left: 15px;
+    padding-left: 22px;
+    border-left: 1px solid #302f2c;
 }
 .log-in{
     color: #3cb878;
@@ -61,15 +62,63 @@
     text-decoration: underline;
 }
 .main{
-
+    font-size: 14px;
 }
 .form{
     box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.52);
-    width: 440px;
-    height: 580px;
+    padding: 30px 60px;
+    width: 320px;
+    height: 520px;
     background-color: white;
     border-radius: 10px;
     position: absolute;
     top: calc(50% - 290px + 29px);
     left: calc(50% - 220px);
+}
+.form-sign-up:before{
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #3cb878;
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+.form-sign-up:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.sign-up{
+    font-size: 20px;
+    float: left;
+}
+.form-log-in{
+    float: right;
+}
+.facebook{
+
+}
+.google{
+
+}
+.fieldset{
+    margin: 0;
+    padding: 0;
+    border-width: 1px 0 0 0;
+    border-top-color: #eaeaea;
+    text-align: center;
+}
+.input{
+    display: block;
+    width: 100%;
+    height: 46px;
+}
+.input:focus{
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.52);
+}
+#checkbox{
+    width: 20px;
+    height: 20px;
 }

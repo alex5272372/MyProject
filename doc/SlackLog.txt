@@ -55,3 +55,11 @@ section.header, section.main, section.footer, etc
 13.01.2018 artem.t
 
 тег br не используй никогда
+
+--------------------------------------------------------------------------------
+15.01.2018 yamnyk
+
+https://tpverstak.ru/common-css-class-names/ - правила именования классов
+rundll32.exe keymgr.dll, KRShowKeyMgr - обнуляет пользователей git на виндоус
+https://codepen.io/pen - песочница
+http://css.yoksel.ru/nth-child/ - nth-child и nth-of-type

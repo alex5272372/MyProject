@@ -62,4 +62,16 @@ section.header, section.main, section.footer, etc
 https://tpverstak.ru/common-css-class-names/ - правила именования классов
 rundll32.exe keymgr.dll, KRShowKeyMgr - обнуляет пользователей git на виндоус
 https://codepen.io/pen - песочница
-http://css.yoksel.ru/nth-child/ - nth-child и nth-of-type
+ - nth-child и nth-of-typehttp://css.yoksel.ru/nth-child/
+
+--------------------------------------------------------------------------------
+17.01.2018 yamnyk
+
+https://caniuse.com/#feat=css-sticky - можно проверить поддержку практически любого свойства.
+ГуглФонтс - https://fonts.google.com тут много шрифтов со ссылками и возможностью скачать. Если нужных нет здусь то трясем дизайнера.
+
+тот самый легендарный и неповторимый  FontAwesome - https://fontawesome.com/
+ссылка для его подключения в документ - <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+СпрайтГеренатор - https://spritegen.website-performance.org/

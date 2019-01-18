@@ -1,0 +1,19 @@
+.table{
+    font-family: Arimo, sans-serif;
+    text-transform: uppercase;
+    border: 22px solid #374765;
+    border-spacing: 0;
+    text-align: center;
+}
+.thead-row{
+    height: 112px;
+}
+.thead:first-of-type{
+    width: 198px;
+}
+.thead:nth-of-type(n+2){
+    width: 157px;
+}
+.trow{
+    height: 166px;
+}

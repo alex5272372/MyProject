@@ -18,6 +18,7 @@
 }
 .thead-row1 .thead:first-of-type{
     width: 310px;
+    color: #484848;
 }
 .thead-row1 .thead:nth-of-type(n+2){
     width: 277px;
@@ -37,6 +38,25 @@
 }
 .thead-row2{
     height: 86px;
+    color: #484848;
+    font-size: 60px;
+}
+.cent{
+    font-size: 18px;
+    font-weight: normal;
+    position: relative;
+}
+.cent:after{
+    content: ".99";
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+.trow{
+    font-size: 16px;
+    color: #484848;
 }
 .trow:last-of-type{
    height: 110px;
@@ -44,6 +64,66 @@
 .trow:nth-last-of-type(n+2){
     height: 69px;
 }
+.trow:nth-of-type(odd){
+    background-color:  #f2f2f2;
+}
+.trow:nth-of-type(even){
+    background-color:  #e3e3e3;
+}
+.trow:last-of-type .cell:first-of-type{
+    background-color:  #dddddd;
+}
 .cell{
     text-align: center;
+}
+.cell:nth-last-of-type(n+2){
+    border-right: 2px solid #cbcbcb;
+}
+.fas,.far{
+    color:  #848484;
+    font-size: 24px;
+    margin-right: 12px;
+    vertical-align: -3px;
+}
+.button{
+    display: inline-block;
+    padding-top: 17px;
+    width: 192px;
+    height: 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.cell:first-of-type .button{
+    background-color: #484848;
+    border-bottom: 7px solid #404040;
+}
+.cell:nth-of-type(2) .button{
+    background-color: #89c331;
+    border-bottom: 7px solid #79b027;
+}
+.cell:nth-of-type(3) .button{
+    background-color: #f04a56;
+    border-bottom: 7px solid #df3a46;
+}
+.cell:nth-of-type(4) .button{
+    background-color: #20807c;
+    border-bottom: 7px solid #16736f;
+}
+.cell:first-of-type .button:hover{
+    background-color: #404040;
+    border-bottom-color: #484848;
+}
+.cell:nth-of-type(2) .button:hover{
+    background-color: #79b027;
+    border-bottom-color: #89c331;
+}
+.cell:nth-of-type(3) .button:hover{
+    background-color: #df3a46;
+    border-bottom-color: #f04a56;
+}
+.cell:nth-of-type(4) .button:hover{
+    background-color: #16736f;
+    border-bottom-color: #20807c;
 }

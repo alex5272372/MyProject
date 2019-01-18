@@ -75,3 +75,4 @@ https://caniuse.com/#feat=css-sticky - можно проверить подде�
  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 СпрайтГеренатор - https://spritegen.website-performance.org/
+Видео по чекбоксам и радио - https://www.youtube.com/watch?v=USH_maXEW8A

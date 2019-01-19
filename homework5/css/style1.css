@@ -1,5 +1,16 @@
+@font-face {
+    font-family: 'arimoregular';
+    src: url('../fonts/arimo-regular-webfont.eot');
+    src: url('../fonts/arimo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arimo-regular-webfont.woff2') format('woff2'),
+    url('../fonts/arimo-regular-webfont.woff') format('woff'),
+    url('../fonts/arimo-regular-webfont.ttf') format('truetype'),
+    url('../fonts/arimo-regular-webfont.svg#arimoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 .table{
-    font-family: Arimo, sans-serif;
+    font-family: arimoregular, sans-serif;
     text-transform: uppercase;
     border: 30px solid #374765;
     border-spacing: 0;

@@ -86,3 +86,9 @@ https://caniuse.com/#feat=css-sticky - можно проверить подде�
 https://www.youtube.com/watch?v=1bD3HiV2uEg
 https://www.youtube.com/watch?v=cXVbsTT5gU8
 https://www.youtube.com/watch?v=r3HX2bMIzOc
+
+--------------------------------------------------------------------------------
+20.01.2018 artem.t
+
+Tематические статьи по пройденному материалу:
+https://dan-it.gitlab.io/fe-book/programming_essentials/

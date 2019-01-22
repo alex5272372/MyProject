@@ -59,7 +59,7 @@
     color: #484848;
 }
 .trow:last-of-type{
-   height: 110px;
+    height: 110px;
 }
 .trow:nth-last-of-type(n+2){
     height: 69px;

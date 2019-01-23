@@ -92,3 +92,10 @@ https://www.youtube.com/watch?v=r3HX2bMIzOc
 
 Tематические статьи по пройденному материалу:
 https://dan-it.gitlab.io/fe-book/programming_essentials/
+
+--------------------------------------------------------------------------------
+22.01.2018 yamnyk
+
+https://css-tricks.com/gradient-borders-in-css/
+https://www.youtube.com/watch?v=lpf-5mG9CGg - CSS3 border-image Property Custom Graphics Slice Tutorial
+https://tpverstak.ru/flex-cheatsheet/ - детальный разбор каждого свойства флексов

@@ -33,6 +33,10 @@
 .cell:nth-of-type(even){
     background-color: #e3e3e3;
 }
+.trow .thead,
+.trow:nth-last-of-type(n+2) .cell{
+    border-bottom: 1px solid #cbcbcb;
+}
 .trow:nth-of-type(n+2) .cell:first-of-type{
     color: white;
 }
@@ -69,9 +73,9 @@
 .button{
     display: inline-block;
     margin-top: 12px;
-    padding-top: 13px;
+    padding-top: 12px;
     width: 144px;
-    height: 23px;
+    height: 24px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;

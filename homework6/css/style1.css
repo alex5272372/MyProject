@@ -82,16 +82,6 @@ body{
     border: 2px solid transparent;
     border-image: linear-gradient(to top, black, white) 1%;
 }
-.section-link .section-price {
-    background-color: #f26522;
-    text-align: left;
-    padding: 25px 20px;
-    width: 272px;
-    height: 27px;
-    position: absolute;
-    top: 204px;
-    transition: all 0.5s linear;
-}
 .section-link:hover .section-price{
     top: 140px;
 }
@@ -100,6 +90,14 @@ body{
     grid-template-columns: 40px 105px;
     justify-content: space-between;
     align-items: end;
+    background-color: #f26522;
+    text-align: left;
+    padding: 25px 20px;
+    width: 272px;
+    height: 27px;
+    position: absolute;
+    top: 204px;
+    transition: all 0.5s linear;
 }
 .section-price-from{
     position: relative;

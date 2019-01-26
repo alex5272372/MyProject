@@ -82,7 +82,12 @@ body{
     border: 2px solid transparent;
     border-image: linear-gradient(to top, black, white) 1%;
 }
-.section-link .section-price {
+.section-link:hover .section-price{
+    top: 140px;
+}
+.section-price{
+    display: flex;
+    justify-content: space-between;
     background-color: #f26522;
     text-align: left;
     padding: 25px 20px;
@@ -91,13 +96,6 @@ body{
     position: absolute;
     top: 204px;
     transition: all 0.5s linear;
-}
-.section-link:hover .section-price{
-    top: 140px;
-}
-.section-price{
-    display: flex;
-    justify-content: space-between;
 }
 .section-price-from{
     position: relative;

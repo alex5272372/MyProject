@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+}
+.text-view{
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    perspective: 15em;
+}
+.text-box{
+    color: yellow;
+    font-family: Arial, serif;
+    animation-name: star-wars;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    width: 40%;
+    margin: 0 auto;
+    transform: rotateX(35deg);
+}
+.header{
+    text-transform: uppercase;
+}
+.text{
+    font-size: 2em;
+    text-align: justify;
+}
+@keyframes star-wars{
+    from{
+        padding-top: 50em;
+    }
+    to{
+        padding-top: 0;
+    }
+}

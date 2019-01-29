@@ -1,21 +1,26 @@
 body{
     background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .text-view{
     text-align: center;
-    height: 100%;
+    flex-basis: 1200px;
+    height: 700px;
     overflow: hidden;
-    perspective: 15em;
+    perspective: 300px;
 }
 .text-box{
     color: yellow;
     font-family: Arial, serif;
-    animation-name: star-wars;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    width: 40%;
+    /*animation: name duration timing-function delay iteration-count direction*/
+    animation: star-wars 30s linear 0s infinite;
     margin: 0 auto;
-    transform: rotateX(35deg);
+    height: 1500px;
+    transform: rotateX(30deg);
 }
 .header{
     text-transform: uppercase;
@@ -26,7 +31,7 @@ body{
 }
 @keyframes star-wars{
     from{
-        padding-top: 50em;
+        padding-top: 600px;
     }
     to{
         padding-top: 0;

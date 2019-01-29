@@ -7,7 +7,6 @@ body{
     align-items: flex-end;
 }
 .text-view{
-    text-align: center;
     flex-basis: 1200px;
     height: 700px;
     overflow: hidden;
@@ -18,20 +17,21 @@ body{
     font-family: Arial, serif;
     /*animation: name duration timing-function delay iteration-count direction*/
     animation: star-wars 30s linear 0s infinite;
-    margin: 0 auto;
     height: 1500px;
-    transform: rotateX(30deg);
+    transform: rotateX(30deg) translateY(-600px);
 }
 .header{
+    font-size: 60px;
+    text-align: center;
     text-transform: uppercase;
 }
 .text{
-    font-size: 2em;
+    font-size: 60px;
     text-align: justify;
 }
 @keyframes star-wars{
     from{
-        padding-top: 600px;
+        padding-top: 1500px;
     }
     to{
         padding-top: 0;

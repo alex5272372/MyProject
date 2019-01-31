@@ -37,10 +37,23 @@ https://www.tightvnc.com/
 
 Packages
 --------
-$ sudo apt-get update
-$ sudo apt-get upgrade
+$ sudo apt update
+$ sudo apt upgrade
 
 $ dpkg --list
-$ sudo apt-get install nautilus
-$ sudo apt-get remove nautilus
+$ sudo apt install nautilus
+$ sudo apt remove nautilus
+----------------------------------------------------------------
+
+Setting Up a Basic Firewall
+---------------------------
+$ sudo ufw app list
+$ sudo ufw status
+$ sudo ufw enable
+$ sudo ufw allow 5901
+----------------------------------------------------------------
+
+Apache Web Server
+-----------------
+
 ----------------------------------------------------------------

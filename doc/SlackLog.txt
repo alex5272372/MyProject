@@ -108,7 +108,7 @@ https://github.com/OlgaVlasova/markdown-doc/blob/master/README.md
 --------------------------------------------------------------------------------
 03.02.2019 yamnyk
 
-isNaN(10); typeof(10); String(10); Number("10"); Boolean(10);
+typeof 10; isNaN(10); String(10); Number("10"); Boolean(10);
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 alert("Hello"); confirm("Hello"); prompt("Hello", "")
 console.log(`Your age is ${age}`);

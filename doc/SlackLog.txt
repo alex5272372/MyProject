@@ -125,3 +125,10 @@ https://codeforces.com/
 
 https://www.jetbrains.com/store/redeem/
 Ключ: ETEJ7-RT2M3-4JWGZ-C6NFW-7757N
+
+--------------------------------------------------------------------------------
+05.02.2019 yamnyk
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties - Свойства которые могут быть анимированными
+https://developer.mozilla.org/ru/docs/Web/CSS/animation-fill-mode
+1 + (translateZ * -1) / perspective

@@ -119,3 +119,9 @@ Number.POSITIVE_INFINITY; Number.MIN_VALUE; Number.MAX_SAFE_INTEGER
 https://www.codewars.com/
 https://www.hackerrank.com/
 https://codeforces.com/
+
+--------------------------------------------------------------------------------
+05.02.2019 Daria
+
+https://www.jetbrains.com/store/redeem/
+Ключ: ETEJ7-RT2M3-4JWGZ-C6NFW-7757N

@@ -4,7 +4,7 @@ while(name === ""){
 }
 if(name != null){
     let age = prompt("Enter your age", "");
-    while(isNaN(age)){
+    while(isNaN(age) || age.length === 0){
         age = prompt("Enter correct age", age);
     }
     if(age != null){

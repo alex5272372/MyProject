@@ -1,65 +1,7 @@
-.container{
-    width: 1280px;
-    margin: 0 auto;
-}
-.elem{
-    width: 150px;
-    height: 100px;
-    background-color: #da4;
-    transition-delay: 0.2s;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-    transition-property: background-color;
-}
-.elem:hover{
-    background-color: #4ad;
-}
-.figure{
-    width: 40px;
-    height: 40px;
-    background-color: green;
-    transition: 1s;
-}
-.figure:hover{
-    transform: rotate(360deg);
-}
-.snake{
-    width: 150px;
-    height: 75px;
-    background-color: darkblue;
-    position: relative;
-    /*animation: move 30s linear 0s infinite;*/
-    animation-name: move;
-    animation-delay: 0.1s;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-.snake::after{
-    content: "";
-    border: 10px solid white;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-}
-.basic-parallax-section{
+.header{
     height: 500px;
-    background-image: url("");
-    background-position: ;
+    background: fixed url("../img/bg1.jpg") center no-repeat;
 }
-@keyframes move{
-    0%, 100%{
-        left: 50px;
-        transform: scale(1, 1);
-    }
-    45%{
-        transform: scale(1, 1);
-    }
-    50%{
-        left: 600px;
-        transform: scale(-1, 1);
-    }
-    95%{
-        transform: scale(-1, 1);
-    }
+.clock {
+    height: 1000px;
 }

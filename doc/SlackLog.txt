@@ -132,3 +132,10 @@ https://www.jetbrains.com/store/redeem/
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties - Свойства которые могут быть анимированными
 https://developer.mozilla.org/ru/docs/Web/CSS/animation-fill-mode
 1 + (translateZ * -1) / perspective
+
+--------------------------------------------------------------------------------
+06.02.2019 yamnyk
+
+Echo  - https://apps.prod.timetoknow.com/login.html?site=dan_it
+логин - nikolaenko
+почта - nikolal@ukr.net

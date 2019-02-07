@@ -1,5 +1,6 @@
-body{
+.parallax{
     text-align: center;
+    perspective: 1px;
 }
 .main{
     font-family: Arial, sans-serif;

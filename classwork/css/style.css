@@ -1,4 +1,25 @@
 body{
+/*    background-image: url("../img/bg.jpg");
+    background-size: cover;*/
+    margin: 0;
+}
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.bg {
+    height: 200px;
+    transform: translateZ(-1px) scale(2);
     background-image: url("../img/bg.jpg");
-    background-size: cover;
+}
+.text {
+    height: 100px;
+    margin-top: -200px;
+    transform: translateZ(0);
+    border: 1px solid black;
+}
+.content{
+    height: 200px;
 }

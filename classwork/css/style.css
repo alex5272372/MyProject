@@ -5,21 +5,27 @@ body{
 }
 .parallax {
     perspective: 1px;
+    perspective-origin: center top;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    position: relative;
 }
 .bg {
-    height: 200px;
+    position: absolute;
+    top: -200px;
+    height: 1000px;
+    width: 100%;
     transform: translateZ(-1px) scale(2);
     background-image: url("../img/bg.jpg");
+    background-size: cover;
 }
-.text {
-    height: 100px;
-    margin-top: -200px;
+.main {
+    height: 800px;
+    /*margin-top: -200px;*/
     transform: translateZ(0);
     border: 1px solid black;
 }
-.content{
-    height: 200px;
+.text{
+    height: 400px;
 }

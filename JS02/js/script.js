@@ -1,23 +1,25 @@
-let m, n;
+let m;
 do {
     m = prompt('Input first number', '');
 } while (m !== null && (isNaN(m) || m <= 1 || m != parseInt(m)));
+let n;
 while (m !== null) {
     n = prompt(`First number is ${m}, input second number`, '');
     if (n === null || !isNaN(n) && n > m && n == parseInt(n)) break;
 }
-let simpleNumbers = [];
-
-/*from math import sqrt
-n = input("n=")
-lst=[]
-for i in xrange(2, n+1):
-for j in lst:
-if j > int((sqrt(i)) + 1):
-lst.append(i)
-break
-if (i % j == 0):
-break
-else:
-lst.append(i)
-print lst*/
+let simpleNumbers = [2];
+for (let i = 3; i <= n; i++) {
+    let isSimle = true;
+    for (let num of simpleNumbers) {
+        if (num > parseInt(i ** .5) + 1) {
+            break;
+        } else if (i % num === 0) {
+            isSimle = false;
+            break;
+        }
+    }
+    if (isSimle) {
+        simpleNumbers.push(i);
+    }
+}
+alert(simpleNumbers);

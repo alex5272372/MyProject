@@ -2,13 +2,15 @@ let m;
 do {
     m = prompt('Input first number', '');
 } while (m !== null && (isNaN(m) || m <= 1 || m != parseInt(m)));
-let n;
+let n = null;
 while (m !== null) {
     n = prompt(`First number is ${m}, input second number`, '');
-    if (n === null || !isNaN(n) && n > m && n == parseInt(n)) break;
+    if (n === null || !isNaN(n) && +n > +m && n == parseInt(n)) {
+        break;
+    }
 }
 let simpleNumbers = [2];
-for (let i = 3; i <= n; i++) {
+for (let i = 3; n !== null && i <= n; i++) {
     let isSimle = true;
     for (let num of simpleNumbers) {
         if (num > parseInt(i ** .5) + 1) {
@@ -20,6 +22,8 @@ for (let i = 3; i <= n; i++) {
     }
     if (isSimle) {
         simpleNumbers.push(i);
+        if (i >= m) {
+            console.log(i);
+        }
     }
 }
-alert(simpleNumbers);

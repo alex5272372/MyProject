@@ -1,3 +1,187 @@
+/*Слой 1 - основное содержимое (main)
+Слой 2 - фоновая заливка (bg)
+Слой 3 - фоновые картинки (bg-img)*/
 body{
+    margin: 0;
     text-align: center;
+}
+
+/* Селекторы для обеспечения параллакс-эффекта (Слой 3) */
+.parallax{
+    width: 1400px;
+    margin: 0 auto;
+    perspective: 2px;
+    perspective-origin: center top;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax-group{
+    position: relative;
+}
+.parallax-group:first-child{
+    z-index: 3;
+}
+.parallax-group:nth-child(2){
+    z-index: 2;
+}
+.parallax-group:nth-child(3){
+    z-index: 1;
+}
+.bg-img{
+    position: absolute;
+    width: 100%;
+    transform: translateZ(-1px) scale(1.5);
+}
+.bg-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/stripe-black.png);
+}
+.bg-img.city{
+    top: -30px;
+    height: 760px;
+    background-image: url("../img/bg1.jpg");
+}
+.bg-img.company{
+    top: 60px;
+    height: 970px;
+    background-image: url("../img/bg2.jpg");
+}
+.bg-img.worker{
+    top: 800px;
+    height: 900px;
+    background-image: url("../img/bg3.jpg");
+}
+
+/* Селекторы фоновой заливки (Слой 2) */
+.bg{
+    position: absolute;
+    width: 0;
+    border-top: 70px solid transparent;
+    border-right: 700px solid white;
+    border-left: 700px solid white;
+}
+.bg.city{
+    top: 450px;
+    height: 400px;
+}
+.bg.city::after{
+    content: "";
+    position: absolute;
+    top: 400px;
+    left: -700px;
+    border-top: 70px solid white;
+    border-right: 700px solid transparent;
+    border-left: 700px solid transparent;
+}
+.bg.company{
+    top: 550px;
+    height: 650px;
+}
+.bg.company::after{
+    content: "";
+    position: absolute;
+    top: 650px;
+    left: -700px;
+    border-top: 70px solid white;
+    border-right: 700px solid transparent;
+    border-left: 700px solid transparent;
+}
+.bg.worker{
+    top: 1000px;
+    height: 600px;
+}
+
+/* Селекторы основного содержимого (Слой 1) */
+.main{
+    font-family: Arial, sans-serif;
+    font-size: 0;
+    transform: translateZ(0);
+}
+/*.main.city{
+    height: 1000px;
+}*/
+.main.company{
+    height: 700px;
+}
+.main.worker{
+    height: 700px;
+}
+.header{
+    margin-top: 30px;
+    height: 75px;
+    padding-top: 35px;
+    background-color: white;
+    border: 1px solid lightgrey;
+}
+.logo{
+    font-size: 36px;
+    color: black;
+    text-decoration: none;
+    margin-right: 130px;
+}
+.logo-blue{
+    color: deepskyblue;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.menu{
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: 8px;
+    margin-left: 50px;
+}
+.menu:hover{
+    color: deepskyblue;
+}
+.city .paragraph:first-of-type{
+    font-size: 52px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    margin: 110px 0 0;
+}
+.city .paragraph:nth-of-type(2){
+    font-size: 52px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    margin: 15px 0 0;
+}
+.city .paragraph:nth-of-type(3){
+    font-size: 60px;
+    font-weight: 700;
+    color: deepskyblue;
+    text-transform: uppercase;
+    margin: 250px 0 0;
+}
+.city .paragraph:nth-of-type(4){
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 0;
+}
+.city .paragraph:nth-of-type(5){
+    font-size: 16px;
+    margin: 30px 150px 0;
+}
+.company .paragraph:first-of-type{
+    font-size: 60px;
+    font-weight: 700;
+    color: deepskyblue;
+    text-transform: uppercase;
+    margin: 230px 0 0;
+}
+.company .paragraph:nth-of-type(2){
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin: 20px 0 0;
 }

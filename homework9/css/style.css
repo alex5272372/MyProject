@@ -104,7 +104,7 @@ body{
     transform: translateZ(0);
 }
 .header{
-    margin-top: 30px;
+    margin: 30px 0 0 3px;
     height: 75px;
     padding-top: 35px;
     background-color: white;

@@ -104,11 +104,10 @@ body{
     transform: translateZ(0);
 }
 .header{
-    margin: 30px 0 0 3px;
+    margin-top: 30px;
     height: 75px;
     padding-top: 35px;
     background-color: white;
-    border: 1px solid lightgrey;
 }
 .logo{
     font-size: 36px;

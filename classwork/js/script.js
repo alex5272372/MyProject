@@ -28,14 +28,20 @@ const STUFFING_BEEF = {
     cal: 50,
 };
 
-function getBurgerPrice(size, stuffing) {
+function validation(sizeToValidate, stuffingToValidate) {
+    while (sizeToValidate === undefined || stuffingToValidate === undefined) {
+        sizeToValidate = prompt("Enter correct size", "");
+        stuffingToValidate = prompt("Enter correct stuffing", "");
+    }
+    return {
+        size: sizeToValidate,
+        stuffing: stuffingToValidate
+    }
+}
+
+function getCaloriesAndPrice({size, stuffing}) {
     let resPrice = 0;
     let resCallories = 0;
-
-    while (size === undefined || stuffing === undefined) {
-        size = prompt("Enter correct size", "");
-        stuffing = prompt("Enter correct stuffing", "");
-    }
 
     switch (size) {
         case SIZE_LARGE.name:
@@ -66,9 +72,12 @@ function getBurgerPrice(size, stuffing) {
     Total price: ${resPrice}`;
 }
 
-alert(
-    getBurgerPrice(
-        prompt("Enter size", "SIZE_SMALL"),
-        prompt("Enter stuffing", "STUFFING_CHEASE")
-    )
-);
+function getBurgerPrice() {
+    let size = prompt("Enter size", "SIZE_SMALL");
+    let stuffing = prompt("Enter stuffing", "STUFFING_CHEASE");
+    let correctSizeStuffing = validation(size, stuffing);
+
+    return getCaloriesAndPrice(correctSizeStuffing);
+}
+
+alert(getBurgerPrice());

@@ -1,83 +1,45 @@
-const SIZE_SMALL = {
-    name: 'SIZE_SMALL',
-    price: 15,
-    cal: 250,
+// let str = prompt('Enter string', '');
+// for (let i = 0; i < str.length; i++) {
+//     console.log(str.charAt(i));
+// }
+
+// let name = prompt("Enter your name");
+// for (let i = 0; i < name.length; i++) {
+//     if (i % 2) console.log(name[i]);
+// }
+
+// const storage = {
+//     cheese: 4,
+//     beef: 18,
+//     water: 100,
+//     chocolate: 0,
+//     milk: 13,
+//     blackTea: 2,
+//     greenTea: 1,
+//     coffe: 0
+// };
+//
+// let userString = prompt('Enter your list', 'milk,chokolate,coffe,water') + ',';
+// while (userString !== '') {
+//     let item = userString.slice(0, userString.indexOf(','));
+//     let count = storage[item] ? storage[item] : `There is no ${item} on storage`;
+//     console.log(`${item}: ${count}`);
+//     userString = userString.substring(userString.indexOf(',') + 1);
+// }
+
+const days = {
+    0: 'sunday',
+    1: 'monday',
+    2: 'tuesday',
+    3: 'wednesday',
+    4: 'thursday',
+    5: 'friday',
+    6: 'saturday',
 };
 
-const SIZE_LARGE = {
-    name: 'SIZE_LARGE',
-    price: 25,
-    cal: 340,
-};
+let ourDate = new Date();
 
-const STUFFING_CHEASE = {
-    name: 'STUFFING_CHEASE',
-    price: 4,
-    cal: 25,
-};
+let userNumber = prompt('Enter count of days', '2');
+ourDate.setDate(ourDate.getDate() - userNumber);
+console.log(days[ourDate.getDay()]);
 
-const STUFFING_SALAD = {
-    name: 'STUFFING_SALAD',
-    price: 5,
-    cal: 5,
-};
-
-const STUFFING_BEEF = {
-    name: 'STUFFING_BEEF',
-    price: 10,
-    cal: 50,
-};
-
-function validation(sizeToValidate, stuffingToValidate) {
-    while (sizeToValidate === undefined || stuffingToValidate === undefined) {
-        sizeToValidate = prompt("Enter correct size", "");
-        stuffingToValidate = prompt("Enter correct stuffing", "");
-    }
-    return {
-        size: sizeToValidate,
-        stuffing: stuffingToValidate
-    }
-}
-
-function getCaloriesAndPrice({size, stuffing}) {
-    let resPrice = 0;
-    let resCallories = 0;
-
-    switch (size) {
-        case SIZE_LARGE.name:
-            resPrice += SIZE_LARGE.price;
-            resCallories += SIZE_LARGE.cal;
-            break;
-        case SIZE_SMALL.name:
-            resPrice += SIZE_SMALL.price;
-            resCallories += SIZE_SMALL.cal;
-            break;
-    }
-    switch (stuffing) {
-        case STUFFING_CHEASE.name:
-            resPrice += STUFFING_CHEASE.price;
-            resCallories += STUFFING_CHEASE.cal;
-            break;
-        case STUFFING_SALAD.name:
-            resPrice += STUFFING_SALAD.price;
-            resCallories += STUFFING_SALAD.cal;
-            break;
-        case STUFFING_BEEF.name:
-            resPrice += STUFFING_BEEF.price;
-            resCallories += STUFFING_BEEF.cal;
-            break;
-    }
-
-    return `Total calories: ${resCallories}
-    Total price: ${resPrice}`;
-}
-
-function getBurgerPrice() {
-    let size = prompt("Enter size", "SIZE_SMALL");
-    let stuffing = prompt("Enter stuffing", "STUFFING_CHEASE");
-    let correctSizeStuffing = validation(size, stuffing);
-
-    return getCaloriesAndPrice(correctSizeStuffing);
-}
-
-alert(getBurgerPrice());

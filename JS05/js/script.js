@@ -1,18 +1,19 @@
 function cloneObject(anyObject) {
-    newObject = {};
+    let newObj = {};
 
     for (property in anyObject)
-        if (typeof anyObject[property]) = "object" && anyObject[property] !== null)
-            newObject[property] = anyObject[property];
-        else newObject[property] = cloneObject(anyObject[property]);
+        if (typeof anyObject[property] === "object" && anyObject[property] !== null)
+            newObj[property] = cloneObject(anyObject[property]);
+        else newObj[property] = anyObject[property];
 
-    return newObject;
+    return newObj;
 }
 
+// Пример использования
 let anyObject = {
     firstName: 'Alexey',
     lastName: 'Nikolaenko',
-    age: 39,
+    age: [30,33,36,39],
     experience: {
         html: 'ok',
         css: 2,
@@ -24,6 +25,5 @@ let anyObject = {
     }
 }
 
-newObj = cloneObject(anyObject);
-delete anyObject;
-console.log(newObj);
+let newObj = cloneObject(anyObject);
+console.log('Clone of object:', newObj);

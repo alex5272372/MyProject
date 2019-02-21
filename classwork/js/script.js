@@ -1,45 +1,46 @@
-// let str = prompt('Enter string', '');
-// for (let i = 0; i < str.length; i++) {
-//     console.log(str.charAt(i));
-// }
+/*
+let array = new Array('1', 1, 'null', {}, [1, 2]);
+let oldLength = array.length;
+let newLength = array.push(12);
 
-// let name = prompt("Enter your name");
-// for (let i = 0; i < name.length; i++) {
-//     if (i % 2) console.log(name[i]);
-// }
+if (oldLength < newLength) {
+    console.log('Operation success');
+} else {
+    console.log('Operation oo');
+}*/
 
-// const storage = {
-//     cheese: 4,
-//     beef: 18,
-//     water: 100,
-//     chocolate: 0,
-//     milk: 13,
-//     blackTea: 2,
-//     greenTea: 1,
-//     coffe: 0
-// };
-//
-// let userString = prompt('Enter your list', 'milk,chokolate,coffe,water') + ',';
-// while (userString !== '') {
-//     let item = userString.slice(0, userString.indexOf(','));
-//     let count = storage[item] ? storage[item] : `There is no ${item} on storage`;
-//     console.log(`${item}: ${count}`);
-//     userString = userString.substring(userString.indexOf(',') + 1);
-// }
+/*
+let from = ['1', 1, 'null', {}, [1, 2], 'gogi'];
+let to = [];
+let length = from.length;
+*/
 
-const days = {
-    0: 'sunday',
-    1: 'monday',
-    2: 'tuesday',
-    3: 'wednesday',
-    4: 'thursday',
-    5: 'friday',
-    6: 'saturday',
-};
+/*for (let i = 0; i < length; i++) {
+    let temp = from.pop();
+    to.push(temp);
+}*/
 
-let ourDate = new Date();
+/*from.forEach((elem, index, array) => {
+    to.push(elem);
+});*/
 
-let userNumber = prompt('Enter count of days', '2');
-ourDate.setDate(ourDate.getDate() - userNumber);
-console.log(days[ourDate.getDay()]);
+/*
+let to = from.map((elem, index, array) => {
+    return elem;
+});
 
+console.log(to);*/
+
+let storage = ['cheese', 'beef', 'milk', 'chocolate', 'water', 'Walter'];
+//storage.forEach((elem) => {console.log(elem)});
+let userChoise = prompt('Enter item to replace:', 'milk');
+let index = storage.indexOf(userChoise);
+
+while (storage.indexOf(userChoise) === -1) {
+    userChoise = prompt('Enter item to replace AGAIN:', 'milk');
+    index = storage.indexOf(userChoise);
+}
+let userReplace = prompt('Enter new items', 'NEWmilk, NEWwater, NEWWalter');
+let newItemsToStorage = userReplace.split(', ');
+storage.splice(index, 1, ...newItemsToStorage);
+alert(`New storage ${storage}`);

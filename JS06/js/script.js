@@ -6,20 +6,23 @@ function askString(message, str = '') {
 
 function createNewUser() {
     let userObject = {
-        getLogin: function() {return (this.setFirstName[0] + this.setLastName).toLowerCase()}
+        firstName: '',
+        lastName: '',
+        getLogin: function() {return (this.firstName[0] + this.lastName).toLowerCase()}
     };
-    Object.defineProperty(userObject, 'firstName', {
-        set: function setFirstName(firstName) {this.firstName = firstName}
+
+    /*Object.defineProperty(userObject, 'firstName', {
+        set: function(newValue) {this.firstName = newValue;}
     });
     Object.defineProperty(userObject, 'lastName', {
-        set: function setLastName(lastName) {this.lastName = lastName}
-    });
+        set: function(newValue) {this.lastName = newValue;}
+    });*/
 
-    userObject.setFirstName = askString('first name');
-    userObject.setLastName = askString('last name');
+    userObject.firstName = askString('first name');
+    userObject.lastName = askString('last name');
     return userObject;
 }
 
-userObject = createNewUser();
+let userObject = createNewUser();
 console.log('User:', userObject);
 console.log('Login:', userObject.getLogin());

@@ -1,18 +1,25 @@
-function askString(message, str) {
-    while (str !== null && str.length === 0)
+function askString(message, str = '') {
+    while (!str.length)
         str = prompt(`Input ${message}`, '');
     return str;
 }
 
-function askStrings() {
-    let stringsObject = {firstName: null, lastName: null};
-    for (let curNum in stringsObject)
-        if ((stringsObject[curNum] = askString(curNum)) === null) return {cancel: true};
-    return stringsObject;
-}
-
 function createNewUser() {
-    let stringsObject = askStrings();
+    let userObject = {
+        getLogin: function() {return (this.setFirstName[0] + this.setLastName).toLowerCase()}
+    };
+    Object.defineProperty(userObject, 'firstName', {
+        set: function setFirstName(firstName) {this.firstName = firstName}
+    });
+    Object.defineProperty(userObject, 'lastName', {
+        set: function setLastName(lastName) {this.lastName = lastName}
+    });
+
+    userObject.setFirstName = askString('first name');
+    userObject.setLastName = askString('last name');
+    return userObject;
 }
 
-createNewUser();
+userObject = createNewUser();
+console.log('User:', userObject);
+console.log('Login:', userObject.getLogin());

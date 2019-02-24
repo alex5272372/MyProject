@@ -4,16 +4,12 @@ function askString(message, str = '') {
     return str;
 }
 
-function User(_firstName, _lastName) {
-	let firstName = _firstName;
-	let lastName = _lastName;
+function User(fName, lName) {
+	let firstName = fName;
+	let lastName = lName;
 	
-	this.setFirstName = function(newFirstName) {
-		firstName = newFirstName;
-	}
-	this.setLastName = function(newLastName) {
-		lastName = newLastName;
-	}
+	this.setFirstName = function(newFirstName) {firstName = newFirstName;};
+	this.setLastName = function(newLastName) {lastName = newLastName;};
 	this.getLogin = function() {return (firstName[0] + lastName).toLowerCase()}
 }
 

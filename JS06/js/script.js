@@ -13,15 +13,21 @@ function createNewUser() {
 		    value: askString(name),
             configurable: true
 		});
-		Object.defineProperty(userObject, 'set' + name[0].toUpperCase() + name.substr(1), {
+
+		userObject['set' + name[0].toUpperCase() + name.substr(1)] = function (newValue) {
+			Object.defineProperty(this, name, {writable: true});
+			this[name] = newValue;
+			Object.defineProperty(this, name, {writable: false});
+		};
+		
+		/*Object.defineProperty(userObject, 'set' + name[0].toUpperCase() + name.substr(1), {
 			set: function(newValue) {
 			    Object.defineProperty(this, name, {writable: true});
 			    this[name] = newValue;
                 Object.defineProperty(this, name, {writable: false});
 			}
-		});
+		});*/
 	}
-	
 	defineMyProperty('firstName');
 	defineMyProperty('lastName');
     return userObject;
@@ -29,8 +35,8 @@ function createNewUser() {
 
 let userObject = createNewUser();
 
-//userObject.setFirstName = askString('new first name');
-//userObject.setLastName = askString('new last name');
+//userObject.setFirstName(askString('new first name'));
+//userObject.setLastName(askString('new last name'));
 
 console.log('User:', userObject);
 console.log('Login:', userObject.getLogin());

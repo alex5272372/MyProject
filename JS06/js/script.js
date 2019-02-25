@@ -18,9 +18,9 @@ function createNewUser() {
 			Object.defineProperty(this, name, {value: newValue});
 		};
 		
-		Object.defineProperty(userObject, 'set' + name[0].toUpperCase() + name.substr(1), {
+		/*Object.defineProperty(userObject, 'set' + name[0].toUpperCase() + name.substr(1), {
 			set: userObject['set' + name[0].toUpperCase() + name.substr(1)]
-		});
+		});*/
 	}
 	defineMyProperty('firstName');
 	defineMyProperty('lastName');

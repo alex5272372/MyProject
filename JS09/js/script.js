@@ -4,6 +4,10 @@ function askDate(str = '') {
     return str;
 }
 
+let birthday = askDate().split('.');
+let birthdayDate = new Date(birthday[2] + '-' + birthday[1] + '-' + birthday[0]);
+alert(`Вам ${parseInt((Date.now() - birthdayDate.getTime()) / 1000 / 60 / 60 / 24 / 365.25)} лет!`);
+
 let zodiacMap = new Map([
     ['0101', 'Козерог'],
     ['0121', 'Водолей'],
@@ -19,13 +23,10 @@ let zodiacMap = new Map([
     ['1123', 'Стрелец'],
     ['1222', 'Козерог']
 ]);
+let chinArr = ['Крыса','Бык','Тигр','Кролик','Дракон','Змея','Лошадь','Коза','Обезьяна','Петух','Собака','Свинья'];
 
-let birthdayString = askDate();
 let zodiacString;
 zodiacMap.forEach((value, key) => {
-    if (birthdayString.substr(3, 2) + birthdayString.substr(0, 2) >= key)
-        zodiacString = value;
+    if (birthday[1] + birthday[0] >= key) zodiacString = value;
 });
-alert(`Ваш знак зодиака: ${zodiacString}`);
-
-//let birthdayDate = new Date();
+alert(`Ваш знак зодиака ${zodiacString}, по китайскому календарю вы ${chinArr[(birthday[2] - 4) % 12]}`);

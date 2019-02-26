@@ -1,46 +1,12 @@
-/*
-let array = new Array('1', 1, 'null', {}, [1, 2]);
-let oldLength = array.length;
-let newLength = array.push(12);
+//let elementsByTagName = document.getElementsByTagName('div');
+//let elementsByClassName = document.getElementsByClassName('class-name2');
+//let elementById = document.getElementById('container');
+//let element = document.querySelector('.class-name2');
+//console.dir(element);
 
-if (oldLength < newLength) {
-    console.log('Operation success');
-} else {
-    console.log('Operation oo');
-}*/
-
-/*
-let from = ['1', 1, 'null', {}, [1, 2], 'gogi'];
-let to = [];
-let length = from.length;
-*/
-
-/*for (let i = 0; i < length; i++) {
-    let temp = from.pop();
-    to.push(temp);
-}*/
-
-/*from.forEach((elem, index, array) => {
-    to.push(elem);
-});*/
-
-/*
-let to = from.map((elem, index, array) => {
-    return elem;
-});
-
-console.log(to);*/
-
-let storage = ['cheese', 'beef', 'milk', 'chocolate', 'water', 'Walter'];
-//storage.forEach((elem) => {console.log(elem)});
-let userChoise = prompt('Enter item to replace:', 'milk');
-let index = storage.indexOf(userChoise);
-
-while (storage.indexOf(userChoise) === -1) {
-    userChoise = prompt('Enter item to replace AGAIN:', 'milk');
-    index = storage.indexOf(userChoise);
+let elementsByClassName = document.getElementsByClassName('training-list');
+for(let i = 0; i < elementsByClassName.length; i++) {
+    if(elementsByClassName[i].innerHTML === 'list-element 5') {
+        elementsByClassName[i].innerHTML = 'qqqqqqqqqqqqqqq';
+    }
 }
-let userReplace = prompt('Enter new items', 'NEWmilk, NEWwater, NEWWalter');
-let newItemsToStorage = userReplace.split(', ');
-storage.splice(index, 1, ...newItemsToStorage);
-alert(`New storage ${storage}`);

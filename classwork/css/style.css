@@ -2,14 +2,45 @@ body{
     background-image: url("../img/bg.jpg");
     background-size: cover;
 }
-.classname{
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+
+.packman-wrapper {
     display: inline-block;
+    position: relative;
 }
-.chess-wrapper{
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
+
+.packman-top {
+    position: absolute;
+    display: inline-block;
+    border: 50px solid transparent;
+    border-top: 50px solid #ffff33;
+    border-left: 50px solid #ffff33;
+    border-radius: 50%;
+    animation: packman-eat-top 0.5s alternate linear infinite;
+}
+
+.packman-bottom {
+    position: absolute;
+    display: inline-block;
+    border: 50px solid transparent;
+    border-bottom: 50px solid #ffff33;
+    border-left: 50px solid #ffff33;
+    border-radius: 50%;
+    animation: packman-eat-bottom 0.5s alternate linear infinite;
+}
+
+@keyframes packman-eat-top {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+@keyframes packman-eat-bottom {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-45deg);
+    }
 }

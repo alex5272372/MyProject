@@ -28,11 +28,9 @@ xrdb $HOME/.Xresources
 startlxde &
 
 $ sudo chmod +x ~/.vnc/xstartup
-$ vncserver
-----------------------------------------------------------------
+$ vncserversudo
 
-Download TightVNC Viewer for Windows:
-https://www.tightvnc.com/
+Download TightVNC Viewer for Windows: https://www.tightvnc.com/
 ----------------------------------------------------------------
 
 Packages
@@ -50,10 +48,17 @@ Setting Up a Basic Firewall
 $ sudo ufw app list
 $ sudo ufw status
 $ sudo ufw enable
+$ sudo ufw disable
+$ sudo ufw allow 22
 $ sudo ufw allow 5901
 ----------------------------------------------------------------
 
 Apache Web Server
 -----------------
-
+$ sudo apt install apache2
+$ sudo ufw allow 'Apache'
+$ sudo systemctl status apache2
+$ sudo systemctl start apache2
+$ sudo systemctl stop apache2
+$ hostname -I
 ----------------------------------------------------------------

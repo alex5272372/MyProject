@@ -15,7 +15,7 @@ function askString(num, str = '') {
     let listItemsArr = [];
 
     for(let itemIndex = 0; itemIndex < itemsNum; itemIndex++) {
-        itemValue = askString(itemIndex + 1);
+        let itemValue = askString(itemIndex + 1);
         if(itemValue === null) return;
         listItemsArr.push(itemValue);
     }

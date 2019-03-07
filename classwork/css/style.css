@@ -6,6 +6,9 @@ body{
 .packman-wrapper {
     display: inline-block;
     position: relative;
+    width: 100px;
+    height: 100px;
+    transform-origin: center;
 }
 
 .packman-top {

@@ -14,22 +14,23 @@ function askString(num, str = '') {
     if(itemsNum === null) return;
     let listItemsArr = [];
 
-    for(itemIndex = 0; itemIndex < itemsNum; itemIndex++) {
+    for(let itemIndex = 0; itemIndex < itemsNum; itemIndex++) {
         itemValue = askString(itemIndex + 1);
         if(itemValue === null) return;
         listItemsArr.push(itemValue);
     }
 
-    const timerElem = document.getElementById('timer');
-    timerElem.hidden = false;
     const listElem = document.createElement('ul');
     listElem.innerHTML = listItemsArr.map((value) => `<li>${value}</li>`).join('');
-    document.body.insertBefore(listElem, timerElem);
+    document.body.appendChild(listElem);
+    const timerElem = document.createElement('p');
+    timerElem.textContent = '10';
+    document.body.appendChild(timerElem);
 
     let timerId = setInterval(() => timerElem.textContent -= 1, 1000);
     setTimeout(() => {
         clearInterval(timerId);
         document.body.removeChild(listElem);
-        timerElem.hidden = true;
+        document.body.removeChild(timerElem);
     }, 10000);
 }());

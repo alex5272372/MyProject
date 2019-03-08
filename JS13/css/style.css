@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+}
+tr{
+    height: 50px;
+}
+td{
+    width: 50px;
+    border: 1px solid black;
+}
+.flag{
+    background-color: lightgrey;
+    color: red;
+}
+#boardTable{
+    margin: 0 auto;
+}

@@ -1,6 +1,12 @@
 body{
     text-align: center;
     font-family: Arial, sans-serif;
+}
+header{
+    background-color: yellow;
+}
+table{
+    margin: 0 auto;
     font-size: 30px;
 }
 tr{
@@ -10,10 +16,13 @@ td{
     width: 50px;
     border: 1px solid black;
 }
+.closed{
+    background-color: lightgrey;
+}
+.opened{
+    background-color: transparent;
+}
 .flag{
     background-color: lightgrey;
     color: red;
-}
-#boardTable{
-    margin: 0 auto;
 }

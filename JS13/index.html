@@ -9,7 +9,17 @@
     <title>Homework JS13</title>
 </head>
 <body>
-<table id="boardTable"></table>
+<header>
+    <span id="startGroup">
+        Размер поля:
+        <input type="text" id="sizeInput" value="8">
+        <button onclick="startGame()">Начать игру</button>
+    </span>
+    <span id="gameGroup" hidden>
+        <span id="gameInfo"></span>
+        <button onclick="restartGame()">Начать игру заново</button>
+    </span>
+</header>
 <script src="js/script.js"></script>
 </body>
 </html>

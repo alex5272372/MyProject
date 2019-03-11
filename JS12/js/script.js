@@ -4,7 +4,8 @@ const drawCircles = function () {
     };
 
     const drawCirclesWithParams = function () {
-        diameterWrap.hidden = true;
+        //diameterWrap.hidden = true;
+        document.body.removeChild(diameterWrap);
 
         for(let row = 0; row < 10; row++) {
             let rowElement = document.createElement('div');
@@ -21,7 +22,9 @@ const drawCircles = function () {
         document.body.onclick = hideCircle;
     };
 
-    draw.hidden = true;
+    //draw.hidden = true;
+    document.body.removeChild(draw);
+
     const diameterWrap = document.createElement('div');
     const diameterTitle = document.createTextNode('Диаметр круга: ');
     diameterWrap.appendChild(diameterTitle);

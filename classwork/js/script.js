@@ -1,31 +1,56 @@
-const packMan = document.querySelector(".packman-wrapper"); //для удобства обращения записываем в константу объект, в котором содержатся вся информация об елементе с классом packman-wrapper в верстке.
-
-document.addEventListener('keydown',(event)=>{ //функции, которая будет выполнятся каждый раз при указанном событии, можно определить аргумент. Назвать аргумент можно как угодно, но в нем будет содержаться ОБЪЕКТ СОБЫТИЯ. Это джаваскриптовый объект, в котором содержится тонна информации о событии в браузере которое произошло, включая нужные нам сведения о том какая кнопка клавиатуры была нажата.
-    let top = packMan.style.top; //записываем в переменную top значение свойства top елемента-обертки пэкмэна. Оно приходит в виде строки в которйо написано число с приставкой 'px'
-    let curTop = Number(top.slice(0, top.indexOf("px"))); //С помощью метода slice() получаем нужную нам часть строки, а именно от 0-го символа до 'px'
-    let left = packMan.style.left; //записываем в переменную top значение свойства left елемента-обертки пэкмэна. Оно приходит в виде строки в которйо написано число с приставкой 'px'
-    let curLeft = Number(left.slice(0, left.indexOf("px"))); //С помощью метода slice() получаем нужную нам часть строки, а именно от 0-го символа до 'px'
-
-    switch (event.keyCode) {
-        case 40: //40 - стрелка вниз. по этому к текущему значению свойства top пэкмэна, нужно добавить 50, и перезаписать значение свойства top для его обновления
-            packMan.style.transform = 'rotate(90deg)';
-            packMan.style.top = `${curTop+50}px`; //с помощью шаблоной строки складываем числа до нажатия + 50 после их суммы дописывает "рх"
-            console.dir(packMan.style.top);
-            break;
-        case 38: //38 - стрелка вверх. по этому ОТ текущего значения top нужно отнимать 50
-            packMan.style.transform = 'rotate(-90deg)';
-            packMan.style.top = `${curTop-50}px`;
-            console.dir(packMan.style.top);
-            break;
-        case 37: //37 - стрелка влево. От текущего значения left отнимает 50
-            packMan.style.transform = 'rotate(180deg)';
-            packMan.style.left = `${curLeft-50}px`;
-            console.dir(packMan.style.top);
-            break;
-        case 39: //39 - стрелка вправо. К текущему значению left добавляем 50
-            packMan.style.transform = 'rotate(0deg)';
-            packMan.style.left = `${curLeft+50}px`;
-            console.dir(packMan.style.top);
-            break;
+const mailStorage = [
+    {
+        subject: "Hello world",
+        from: "gogidoe@somemail.nothing",
+        to: "lolabola@ui.ux",
+        text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    },
+    {
+        subject: "How could you?!",
+        from: "ladyboss@somemail.nothing",
+        to: "ingeneer@nomail.here",
+        text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    },
+    {
+        subject: "Acces denied",
+        from: "info@cornhub.com",
+        to: "gogidoe@somemail.nothing",
+        text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
     }
-});
+];
+
+const wrapper = document.getElementById('mailWrapper');
+let currentShowEmail = '';
+
+const showEmailList = () => {
+    const fragment = document.createDocumentFragment();
+    mailStorage.forEach((elem) => {
+        const emailItem = document.createElement('div');
+        emailItem.className = 'mail-list-item';
+        const subject = document.createElement('h4');
+        const from = document.createElement('p');
+        const to = document.createElement('p');
+        const text = document.createElement('a');
+        text.hidden = true;
+
+        emailItem.appendChild(subject);
+        emailItem.appendChild(from);
+        emailItem.appendChild(to);
+        emailItem.appendChild(text);
+
+        subject.textContent = elem.subject;
+        from.textContent = elem.from;
+        to.textContent = elem.to;
+        text.textContent = elem.text;
+
+        emailItem.onclick = () => {
+           if(currentShowEmail === wrapper) {};
+        };
+
+        fragment.appendChild(emailItem);
+    });
+
+    wrapper.appendChild(fragment);
+};
+
+showEmailList();

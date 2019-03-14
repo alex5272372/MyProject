@@ -1,9 +1,17 @@
-#a {
-    box-shadow: inset внутр.тень ai1, inset внутр.тень ai2, внешняя тень ao1, внешняя тень ao2;
+body {
+    text-align: center;
 }
-#b {
-    box-shadow: inset внутр.тень bi1, inset внутр.тень bi2, внешняя тень bo1, внешняя тень bo2;
+.outer-frame {
+    width: 300px;
+    height: 300px;
+    border: 10px solid gray;
+    border-radius: 50%;
+    margin: 0 auto;
 }
-#c {
-    box-shadow: inset внутр.тень ci1, inset внутр.тень ci2, внешняя тень co1, внешняя тень co2;
+.inner-frame {
+    width: 260px;
+    height: 260px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    margin: 18px auto;
 }

@@ -96,7 +96,7 @@ memoryElement.style.left = '5px';
 memoryElement.textContent = 'm';
 
 const displayCalculator = () => {
-    displayElement = document.getElementsByClassName('display')[0]
+    displayElement = document.getElementsByClassName('display')[0];
     displayInputElement = displayElement.getElementsByTagName('input')[0];
     displayInputElement.value = calc.stage === 3 ? calc.secondNumber : calc.firstNumber;
 

@@ -1,0 +1,9 @@
+#a {
+    box-shadow: inset внутр.тень ai1, inset внутр.тень ai2, внешняя тень ao1, внешняя тень ao2;
+}
+#b {
+    box-shadow: inset внутр.тень bi1, inset внутр.тень bi2, внешняя тень bo1, внешняя тень bo2;
+}
+#c {
+    box-shadow: inset внутр.тень ci1, inset внутр.тень ci2, внешняя тень co1, внешняя тень co2;
+}

@@ -1,7 +1,9 @@
 body {
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 .outer-frame {
+    position: relative;
     width: 300px;
     height: 300px;
     border: 10px solid gray;
@@ -9,9 +11,234 @@ body {
     margin: 0 auto;
 }
 .inner-frame {
+    position: absolute;
+    left: 18px;
+    top: 18px;
     width: 260px;
     height: 260px;
     border: 2px solid gray;
     border-radius: 50%;
-    margin: 18px auto;
+}
+.axis {
+    position: absolute;
+    left: 140px;
+    top: 140px;
+    border: 10px solid black;
+    border-radius: 50%;
+}
+.seconds-axis {
+    position: absolute;
+    left: 144px;
+    top: 144px;
+    border: 6px solid red;
+    border-radius: 50%;
+}
+.digit {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+}
+.digit1 {
+    left: 196px;
+    top: 42px;
+}
+.digit2 {
+    left: 236px;
+    top: 77px;
+}
+.digit3 {
+    left: 252px;
+    top: 134px;
+}
+.digit4 {
+    left: 236px;
+    top: 187px;
+}
+.digit5 {
+    left: 197px;
+    top: 226px;
+}
+.digit6 {
+    left: 142px;
+    top: 243px;
+}
+.digit7 {
+    left: 87px;
+    top: 226px
+}
+.digit8 {
+    left: 45px;
+    top: 186px;
+}
+.digit9 {
+    left: 28px;
+    top: 133px;
+}
+.digit10 {
+    left: 43px;
+    top: 77px;
+}
+.digit11 {
+    left: 79px;
+    top: 40px;
+}
+.digit12 {
+    left: 132px;
+    top: 23px;
+}
+.division {
+    position: absolute;
+    left: 148px;
+    width: 2px;
+    height: 262px;
+    border-top: 20px solid grey;
+    border-bottom: 20px solid grey;
+    transform-origin: center;
+}
+.div-bold {
+    width: 4px;
+    border-color: black;
+}
+.div1 {
+   transform: rotate(6deg);
+}
+.div2 {
+    transform: rotate(12deg);
+}
+.div3 {
+    transform: rotate(18deg);
+}
+.div4 {
+    transform: rotate(24deg);
+}
+.div5 {
+    transform: rotate(30deg);
+}
+.div6 {
+    transform: rotate(36deg);
+}
+.div7 {
+    transform: rotate(42deg);
+}
+.div8 {
+    transform: rotate(48deg);
+}
+.div9 {
+    transform: rotate(54deg);
+}
+.div10 {
+    transform: rotate(60deg);
+}
+.div11 {
+    transform: rotate(66deg);
+}
+.div12 {
+    transform: rotate(72deg);
+}
+.div13 {
+    transform: rotate(78deg);
+}
+.div14 {
+    transform: rotate(84deg);
+}
+.div15 {
+    transform: rotate(90deg);
+}
+.div16 {
+    transform: rotate(96deg);
+}
+.div17 {
+    transform: rotate(102deg);
+}
+.div18 {
+    transform: rotate(108deg);
+}
+.div19 {
+    transform: rotate(114deg);
+}
+.div20 {
+    transform: rotate(120deg);
+}
+.div21 {
+    transform: rotate(126deg);
+}
+.div22 {
+    transform: rotate(132deg);
+}
+.div23 {
+    transform: rotate(138deg);
+}
+.div24 {
+    transform: rotate(144deg);
+}
+.div25 {
+    transform: rotate(150deg);
+}
+.div26 {
+    transform: rotate(156deg);
+}
+.div27 {
+    transform: rotate(162deg);
+}
+.div28 {
+    transform: rotate(168deg);
+}
+.div29 {
+    transform: rotate(174deg);
+}
+#hoursArrow {
+    position: absolute;
+    left: 145px;
+    top: 60px;
+    height: 110px;
+    border: 5px solid black;
+    transform-origin: 5px 90px;
+    /*animation: arrow-animation 216s linear 0s infinite;*/
+}
+#minutesArrow {
+    position: absolute;
+    left: 147px;
+    top: 22px;
+    height: 160px;
+    border: 3px solid black;
+    transform-origin: 3px 128px;
+    /*animation: arrow-animation 18s linear 0s infinite;*/
+}
+#secondsArrow {
+    position: absolute;
+    left: 149px;
+    top: 40px;
+    height: 155px;
+    border: 1.5px solid red;
+    transform-origin: 1.5px 110px;
+    /*animation: arrow-animation 0.3s linear 0s infinite;*/
+}
+/*@keyframes arrow-animation{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}*/
+.bracket {
+    width: 70px;
+    height: 20px;
+    margin: -5px auto 0;
+    background-color: grey;
+}
+.control-panel {
+    width: 340px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px solid grey;
+}
+.buttons-panel {
+    float: left;
+}
+#msSpan {
+    float: right;
+    color: red;
+    font-size: 18px;
 }

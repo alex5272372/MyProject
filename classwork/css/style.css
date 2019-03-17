@@ -2,35 +2,3 @@
     background-image: url("../img/bg.jpg");
     background-size: cover;
 }*/
-
-.modal-wrapper {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.5);
-}
-.modal {
-    background-color: lightgreen;
-    display: block;
-    width: 500px;
-    height: 300px;
-}
-
-.new-mail-modal{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    height: 500px;
-    display: flex;
-    box-sizing: border-box;
-    padding: 50px;
-    justify-content: space-around;
-    flex-direction: column;
-    background-color: green;
-}

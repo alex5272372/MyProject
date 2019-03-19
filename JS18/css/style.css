@@ -1,0 +1,109 @@
+body{
+    text-align: center;
+}
+.main{
+    font-family: Arial, sans-serif;
+    font-size: 0;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.bg{
+    background: fixed center no-repeat;
+}
+.text{
+    border: 1px solid lightgrey;
+    height: 400px;
+}
+.text-p{
+    margin: 0;
+    padding-top: 120px;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.text .text-p::after{
+    content: "We are an award winning creative agency based in Wisconsin with a passion for helping our clients grow.";
+    display: block;
+    margin-top: 35px;
+    font-size: 17px;
+    font-weight: normal;
+    text-transform: none;
+}
+.bg .text-p{
+    color: white;
+}
+.short-line{
+    margin: 50px auto;
+    border: 2px solid orange;
+    width: 60px;
+}
+.long-line{
+    margin-top: 50px;
+    border: 2px solid white;
+    width: 280px;
+}
+.header{
+    background-image: url("../img/bg1.jpg");
+    height: 900px;
+    box-sizing: border-box;
+    padding: 500px 86px 0;
+    text-align: left;
+}
+.header-first{
+    margin: 0;
+    color: white;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+.header-second{
+    margin: 0 0 28px;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+}
+.header-left{
+    display: inline-block;
+    padding: 35px 30px;
+    width: 92px;
+    height: 59px;
+    font-size: 54px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid white;
+    background-color: white;
+}
+.header-right{
+    display: inline-block;
+    padding: 35px 30px;
+    width: 610px;
+    height: 59px;
+    color: white;
+    font-size: 54px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid white;
+    background-color:  rgba(0, 0, 0, 0.3);
+}
+.clock{
+    background-image: url("../img/bg2.jpg");
+    height: 380px;
+}
+.tree{
+    background-image: url("../img/bg3.jpg");
+    height: 475px;
+}
+.water{
+    background-image: url("../img/bg4.jpg");
+    height: 485px;
+}
+.water-p{
+    margin: 10px 0;
+    color: white;
+    font-size: 17px;
+}
+.logo:nth-of-type(n+2){
+    margin-left: 65px;
+}
+.orange{
+    color: orange;
+}

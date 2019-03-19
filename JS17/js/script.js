@@ -15,12 +15,12 @@ draw.click(function () {
                     'display': 'inline-block',
                     'border': `${diameterInput.val() / 2}px solid rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)})`,
                     'borderRadius': '50%'
-                }));
+                }).addClass('target'));
             }
             $body.append(rowElement);
         }
         $body.click(function () {
-            $(event.target).fadeTo('slow', 0);
+            if (event.target.className === 'target') $(event.target).fadeTo('slow', 0);
         });
     };
 

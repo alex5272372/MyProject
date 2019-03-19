@@ -20,14 +20,9 @@ const mailStorage = [
 ];
 
 const $mailWrapper = $('#mailWrapper');
-// let currentShowEmail = Number(localStorage.getItem('currentShowEmail'));
-
-const routeToEmailPage = (emailFromStorage) => {
-    $('body > :not(script)').remove();
-    $('body > script:first').before(createMailItem(emailFromStorage, true));
-};
 
 const createMailItem = (emailFromStorage, showText) => {
+    const $mailSliderItem = $('<div>');
     const $mailItem = $('<div/>', {class: 'mail-item'});
     const text = showText ? `<p class="mail-item-text">${emailFromStorage.text}</p>` : '';
 
@@ -36,26 +31,22 @@ const createMailItem = (emailFromStorage, showText) => {
             <p class="mail-item-from">${emailFromStorage.from}</p>
             <p class="mail-item-to">${emailFromStorage.to}</p>
             ${text}`);
-
-    return $mailItem;
+    $mailSliderItem.append($mailItem);
+    return $mailSliderItem;
 };
 
 const showEmailList = () => {
     const $documentFragment = $(document.createDocumentFragment());
 
     mailStorage.forEach((email) => {
-        const $mailItem = createMailItem(email,false);
+        const $mailItem = createMailItem(email,false).find(':first');
 
         $mailItem.click((event) => {
             const itemIndex = $(event.currentTarget).index();
             let itemText = $(`.mail-item:eq(${itemIndex}) > .mail-item-text`)[0];
 
             if(itemText) {
-                if(event.target === itemText) {
-                    routeToEmailPage(email);
-                } else {
-                    itemText.remove();
-                };
+                itemText.remove();
 
             } else {
                 $('.mail-item > .mail-item-text').remove();
@@ -73,3 +64,11 @@ const showEmailList = () => {
 };
 
 showEmailList();
+
+$(document).ready(function(){
+    $('#mailWrapper').slick({
+        variableHeight: true,
+        arrows: true,
+        dots: true
+    });
+});

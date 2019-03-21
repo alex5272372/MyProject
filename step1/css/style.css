@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+.header {
+    height: 700px;
+    background: url("../img/section-1.jpg") fixed no-repeat;
+    background-size: cover;
+}

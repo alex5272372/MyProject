@@ -26,17 +26,18 @@ $(document).ready(function () {
             })
         )
     );
-    $('.main.bg.clock').before($('<a>', {id: 'clockAnchor'}));
-    $('.main.bg.tree').before($('<a>', {id: 'treeAnchor'}));
-    $('.main.bg.water').before($('<a>', {id: 'waterAnchor'}));
-
     $('.main.bg.clock + .main.text').after($('<button>', {
         text: 'Изменить видимость',
         click: function () {
             $('.main.bg.clock').slideToggle(500);
             $('.main.bg.clock + .main.text').slideToggle(500);
+            $html.animate({scrollTop: $('#clockAnchor').offset().top}, 500);
         }
     }));
+
+    $('.main.bg.clock').before($('<div>', {id: 'clockAnchor'}));
+    $('.main.bg.tree').before($('<div>', {id: 'treeAnchor'}));
+    $('.main.bg.water').before($('<div>', {id: 'waterAnchor'}));
 
     $(window).scroll(function () {
         if($html.scrollTop() > $(window).height()) {

@@ -1,3 +1,4 @@
+/* Основные стили */
 body {
     margin: 0;
     text-align: center;
@@ -115,8 +116,6 @@ body {
     align-items: center;
     width: 160px;
     height: 60px;
-    margin: 10px;
-    font-size: 13px;
     color: white;
     text-transform: uppercase;
     text-decoration: none;
@@ -124,12 +123,16 @@ body {
     border-radius: 4px;
 }
 .header-explore {
+    margin: 10px;
     background-color: #18cfab;
     box-shadow: 0 -5px 0 0 white;
+    font-size: 13px;
 }
 .header-purchase {
+    margin: 10px;
     background-color: #00cbf6;
     box-shadow: 0 -5px 0 0 white;
+    font-size: 13px;
 }
 .options {
     display: flex;
@@ -238,9 +241,10 @@ body {
     color: white;
 }
 .service-button {
-    margin-top: 75px;
+    margin: 75px 0 0;
     background-color: #18cfab;
     box-shadow: 0 -5px 0 0 white;
+    font-size: 13px;
 }
 .work {
     background-color: #f8fcfe;
@@ -268,8 +272,110 @@ body {
     color: #18cfab;
 }
 .work-content {
-    margin-top: 70px;
+    margin: 70px 0;
     font-size: 0;
+}
+.work-img {
+    display: inline-block;
+    position: relative;
+}
+.work-hover {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 284px;
+    height: 203px;
+    background-color: #f8fcfe;
+    border-top: 3px solid #18cfab;
+}
+.work-hover-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #18cfab;
+    border-radius: 50%;
+    color: #18cfab;
+    font-size: 16px;
+    text-decoration: none;
+}
+.work-hover-button:hover {
+    color: white;
+    background-color: #18cfab;
+}
+.work-hover-p1 {
+    margin: 30px 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #18cfab;
+    text-transform: uppercase;
+}
+.work-hover-p2 {
+    font-size: 13px;
+    color: gray;
+}
+.work-button {
+    margin: 20px 0 70px;
+    background-color: #18cfab;
+    font-size: 14px;
+}
+.big-plus {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.news {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: ;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    height: 600px;
+}
+.news-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin: 25px 0;
+    background-color: #f8fcfe;
+    border: 1px solid lightgrey;
+    text-decoration: none;
+    color: grey;
+}
+.news-link::after {
+    content: "12 Feb";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 46px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    background-color: #1c2a33;
+}
+.news-post {
+    margin: 14px 0 0 13px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.news-author {
+    margin: 12px 0 12px 17px;
+    font-size: 14px;
+}
+.news-link:hover .news-post {
+    color: #18cfab;
+}
+.news-link:hover::after {
+    background-color: #18cfab;
 }
 .footer {
     background-color: #1c2a33;
@@ -287,4 +393,64 @@ body {
 }
 .footer-ham {
     color: #18cfab;
+}
+
+/* Заимствованные стили */
+.loader-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 120px;
+    margin: 0 auto;
+}
+.loader-box {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, #CE9FFC 0%, #7367F0 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: pulse 1s linear infinite alternate;
+}
+.loader-box:nth-child(1) {
+    animation-delay: 0s;
+}
+.loader-box:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.loader-box:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.loader-box:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.loader-box:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.loader-box:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.loader-box:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.loader-box:nth-child(8) {
+    animation-delay: 0.7s;
+}
+.loader-box:nth-child(9) {
+    animation-delay: 0.8s;
+}
+@keyframes pulse {
+    from,
+    40% {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 0.5;
+    }
+    80%,
+    to {
+        opacity: 1;
+    }
 }

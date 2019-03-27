@@ -1,4 +1,4 @@
-/* Основные стили */
+/* Общие стили */
 body {
     margin: 0;
     text-align: center;
@@ -8,6 +8,36 @@ body {
     width: 1160px;
     margin: 0 auto;
 }
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 60px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.section-head {
+    margin: 0;
+    padding: 80px 0 15px;
+    font-size: 35px;
+}
+.section-hr {
+    display: inline-block;
+    width: 80px;
+    border: 0.5px solid #18cfab;
+    box-shadow: 15px 5px 0 0 #18cfab;
+}
+.big-plus {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Заголовок страницы */
 .header {
     height: 900px;
     background: url("../img/section-1.jpg") fixed no-repeat;
@@ -110,18 +140,6 @@ body {
     color: white;
     font-weight: lighter;
 }
-.button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 160px;
-    height: 60px;
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-}
 .header-explore {
     margin: 10px;
     background-color: #18cfab;
@@ -134,6 +152,8 @@ body {
     box-shadow: 0 -5px 0 0 white;
     font-size: 13px;
 }
+
+/* Секция с опциями */
 .options {
     display: flex;
     height: 250px;
@@ -159,17 +179,8 @@ body {
     font-size: 14px;
     text-transform: uppercase;
 }
-.section-head {
-    margin: 0;
-    padding: 80px 0 15px;
-    font-size: 35px;
-}
-.section-hr {
-    display: inline-block;
-    width: 80px;
-    border: 0.5px solid #18cfab;
-    box-shadow: 15px 5px 0 0 #18cfab;
-}
+
+/* Секция Сервисы */
 .service-tabs {
     display: flex;
     margin-top: 70px;
@@ -246,6 +257,8 @@ body {
     box-shadow: 0 -5px 0 0 white;
     font-size: 13px;
 }
+
+/* Секция Работы */
 .work {
     background-color: #f8fcfe;
     border-bottom: 1px solid lightgrey;
@@ -324,11 +337,8 @@ body {
     background-color: #18cfab;
     font-size: 14px;
 }
-.big-plus {
-    font-size: 30px;
-    font-weight: bold;
-    margin-right: 10px;
-}
+
+/* Секция Новости */
 .news {
     display: flex;
     flex-direction: row;
@@ -336,7 +346,7 @@ body {
     align-items: ;
     flex-wrap: wrap;
     margin-top: 45px;
-    height: 600px;
+    height: 680px;
 }
 .news-link {
     display: flex;
@@ -377,6 +387,110 @@ body {
 .news-link:hover::after {
     background-color: #18cfab;
 }
+
+/* Секция Люди */
+.people {
+    margin-top: 90px;
+    background: url("../img/section-3.jpg") fixed no-repeat;
+    background-size: cover;
+}
+.people-bg {
+    height: 850px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.people .section-head {
+    color: white;
+}
+.people-quote {
+    font-size: 45px;
+    color: #18cfab;
+}
+.people-p1 {
+    font-size: 16px;
+    color: lightgrey;
+}
+.people-p2 {
+    margin: 42px 0 0;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #18cfab;
+}
+.people-p3 {
+    font-size: 13px;
+    color: lightgrey;
+}
+.people-tabs {
+    position: relative;
+    margin: 240px auto 0;
+    width: 440px;
+    height: 72px;
+}
+.people-left {
+    position: absolute;
+    top: 26px;
+    left: -32px;
+    width: 30px;
+    height: 25px;
+    border: 1px solid lightgrey;
+    padding-top: 5px;
+    font-size: 16px;
+    color: lightgrey;
+}
+.people-right {
+    position: absolute;
+    top: 26px;
+    right: -32px;
+    width: 30px;
+    height: 25px;
+    border: 1px solid lightgrey;
+    padding-top: 5px;
+    font-size: 16px;
+    color: lightgrey;
+}
+.people-left:hover,.people-right:hover {
+    border-color: #18cfab;
+    background-color: #18cfab;
+    color: white;
+}
+.people-tab-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #18cfab;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(24, 207, 171, 0.3);
+}
+.people-tab {
+    position: absolute;
+    top: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(24, 207, 171, 0.3);
+}
+.people-active {
+    border: 3px solid #18cfab;
+    box-shadow: 0 0 0 10px rgba(24, 207, 171, 0.3);
+}
+.people-tab-bg:nth-child(2),.people-tab:nth-child(3) {
+    left: 40px;
+}
+.people-tab-bg:nth-child(4),.people-tab:nth-child(5) {
+    left: 140px;
+}
+.people-tab-bg:nth-child(6),.people-tab:nth-child(7) {
+    left: 240px;
+}
+.people-tab-bg:nth-child(8),.people-tab:nth-child(9) {
+    left: 340px;
+}
+
+/* Секция Галерея */
+
+/* Подвал страницы */
 .footer {
     background-color: #1c2a33;
 }

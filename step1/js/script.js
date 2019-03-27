@@ -1,6 +1,7 @@
 let serviceTab;
 let workTab;
 let workMore = 1;
+let peopleTab;
 
 const displayServiceTab = function () {
     $(`.service-tab:not(:eq(${serviceTab}))`).removeClass('active-service');
@@ -22,6 +23,40 @@ const displayWorkTab = function () {
         if (workMore === 3) $('.work-button').hide();
         else $('.work-button').show();
     }
+};
+
+const displayPeopleTab = function (newPeopleTab = null) {
+    let $peopleTab = $('.people-tab');
+    let $peopleTabBg = $('.people-tab-bg');
+
+    if(newPeopleTab !== null) {
+        if(newPeopleTab === peopleTab) return;
+
+        $peopleTabBg.eq(peopleTab).hide();
+        $peopleTab.eq(peopleTab)
+        .removeClass('people-active')
+        .animate({
+            top: '12px',
+            left: `${peopleTab * 100 + 40}px`,
+            width: '60px',
+            height: '60px'
+        });
+
+        peopleTab = newPeopleTab;
+        localStorage.setItem('peopleTab', peopleTab);
+    }
+
+    $('.people-info').hide().eq(peopleTab).show();
+    $peopleTabBg.eq(peopleTab).show();
+
+    $peopleTab.eq(peopleTab)
+    .addClass('people-active')
+    .animate({
+        top: '-200px',
+        left: '148px',
+        width: '144px',
+        height: '144px'
+    });
 };
 
 const ready = function () {
@@ -83,6 +118,19 @@ const ready = function () {
             workMore++;
             displayWorkTab();
         }, 2000)
+    });
+
+    peopleTab  = Number(localStorage.getItem('peopleTab'));
+    displayPeopleTab();
+
+    $('.people-tab').click(function (event) {
+        displayPeopleTab($('.people-tab').index(event.target));
+    });
+    $('.people-left').click(function () {
+        if(peopleTab > 0) displayPeopleTab(peopleTab - 1);
+    });
+    $('.people-right').click(function () {
+        if(peopleTab < 3) displayPeopleTab(peopleTab + 1);
     });
 };
 

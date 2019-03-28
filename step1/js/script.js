@@ -63,42 +63,67 @@ const displayPeopleTab = function (newPeopleTab = null) {
 const displayRandomImages = function () {
     let randomIndex = 0;
 
-    $(`.grid-item:not(:lt(${gridMore * 8}),.grid1,.grid-item--height2)`).each(function (index, elem) {
+    $(`.grid-item:not(:lt(${gridMore * 8}),.grid0,.grid-item--height2)`).each(function (index, elem) {
         $(elem).css({
             backgroundImage: `url("https://loremflickr.com/372/260?random=${++randomIndex + gridMore * 18}")`
         })
     });
-    $(`.grid-item--height2:not(:lt(${gridMore * 8}))`).each(function (index, elem) {
+    $(`.grid-item:not(:lt(${gridMore * 8})).grid-item--height2`).each(function (index, elem) {
         $(elem).css({
             backgroundImage: `url("https://loremflickr.com/372/370?random=${++randomIndex + gridMore * 18}")`
         })
     });
-    $(`.grid1-item:not(:lt(${gridMore * 8}),.grid1-item--width2)`).each(function (index, elem) {
+    $(`.grid-item:not(:lt(${gridMore * 8})) .grid0-item:not(.grid0-item--width2)`).each(function (index, elem) {
         $(elem).css({
             backgroundImage: `url("https://loremflickr.com/120/95?random=${++randomIndex + gridMore * 18}")`
         })
     });
-    $(`.grid1-item--width2:not(:lt(${gridMore * 8}))`).each(function (index, elem) {
+    $(`.grid-item:not(:lt(${gridMore * 8})) .grid0-item--width2`).each(function (index, elem) {
         $(elem).css({
             backgroundImage: `url("https://loremflickr.com/183/170?random=${++randomIndex + gridMore * 18}")`
         })
     });
 };
 
+const gridItemMouseEnter = function (event) {
+    $(event.currentTarget).append($('<div>')
+        .addClass('grid-hover')
+        .append($('<div>')
+            .addClass('grid-hover-button')
+            .append($('<i>')
+                .addClass('fas')
+                .addClass('fa-search')))
+        .append($('<div>')
+            .addClass('grid-hover-button')
+            .append($('<i>')
+                .addClass('fas')
+                .addClass('fa-expand-arrows-alt'))));
+};
+
+const gridItemMouseLeave = function (event) {
+    $(event.currentTarget).find('.grid-hover').remove();
+};
+
 const displayGridItems = function () {
     let $grid = $('.grid');
 
-    for(i = 1; i <= 8; i++) {
+    for(let itemIndex = 1; itemIndex <= 8; itemIndex++) {
         let $elem = $('<div>').addClass('grid-item');
+        if(itemIndex !== 3) $elem.mouseenter(gridItemMouseEnter).mouseleave(gridItemMouseLeave);
 
-        if(i === 2 || i === 6) $elem.addClass('grid-item--height2');
-        else if(i === 3) {
-            /*$elem.addClass('grid1');
-            for(j === 1; j <= 11; j++) {
-                let $elem1 = $('<div>').addClass('grid1-item');
-                if(j <= 2) $elem1.addClass('grid1-item--width2');
+        if(itemIndex === 2 || itemIndex === 6) $elem.addClass('grid-item--height2');
+        else if(itemIndex === 3) {
+            $elem.addClass(`grid0`);
+
+            for(let itemIndex1 = 1; itemIndex1 <= 11; itemIndex1++) {
+                let $elem1 = $('<div>').addClass(`grid0-item`);
+                $elem1.mouseenter(gridItemMouseEnter).mouseleave(gridItemMouseLeave);
+
+                if(itemIndex1 === 1 || itemIndex1 === 2) $elem1.addClass(`grid0-item--width2`);
+                if(itemIndex1 !== 2 && itemIndex1 !== 5 && itemIndex1 !== 8 && itemIndex1 !== 11)
+                    $elem1.css({marginRight: '6px'});
                 $elem.append($elem1).masonry('appended', $elem1);
-            }*/
+            }
         }
         $grid.append($elem).masonry('appended', $elem);
     }
@@ -185,8 +210,8 @@ const ready = function () {
         gutter: 20
     });
 
-    $('.grid1').masonry({
-        itemSelector: '.grid1-item',
+    $('.grid0').masonry({
+        itemSelector: '.grid0-item',
         columnWidth: 57,
         gutter: 6
     });
@@ -201,6 +226,10 @@ const ready = function () {
             displayGridItems();
         }, 2000)
     });
+
+    let gridItem = $('.grid-item:not(.grid0),.grid0-item');
+    gridItem.mouseenter(gridItemMouseEnter);
+    gridItem.mouseleave(gridItemMouseLeave);
 };
 
 document.addEventListener('DOMContentLoaded', ready);

@@ -8,6 +8,17 @@ body {
     width: 1160px;
     margin: 0 auto;
 }
+.section-head {
+    margin: 0;
+    padding: 80px 0 15px;
+    font-size: 35px;
+}
+.section-hr {
+    display: inline-block;
+    width: 80px;
+    border: 0.5px solid #18cfab;
+    box-shadow: 15px 5px 0 0 #18cfab;
+}
 .button {
     display: inline-flex;
     justify-content: center;
@@ -20,21 +31,75 @@ body {
     font-weight: bold;
     border-radius: 4px;
 }
-.section-head {
-    margin: 0;
-    padding: 80px 0 15px;
-    font-size: 35px;
-}
-.section-hr {
-    display: inline-block;
-    width: 80px;
-    border: 0.5px solid #18cfab;
-    box-shadow: 15px 5px 0 0 #18cfab;
+.work-button,.grid-button {
+    margin: 20px 0 70px;
+    background-color: #18cfab;
+    font-size: 14px;
 }
 .big-plus {
     font-size: 30px;
     font-weight: bold;
     margin-right: 10px;
+}
+
+/* Стили для анимации загрузки */
+.loader-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 120px;
+    margin: 0 auto;
+}
+.loader-box {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, #CE9FFC 0%, #7367F0 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: pulse 1s linear infinite alternate;
+}
+.loader-box:nth-child(1) {
+    animation-delay: 0s;
+}
+.loader-box:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.loader-box:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.loader-box:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.loader-box:nth-child(5) {
+    animation-delay: 0.4s;
+}
+.loader-box:nth-child(6) {
+    animation-delay: 0.5s;
+}
+.loader-box:nth-child(7) {
+    animation-delay: 0.6s;
+}
+.loader-box:nth-child(8) {
+    animation-delay: 0.7s;
+}
+.loader-box:nth-child(9) {
+    animation-delay: 0.8s;
+}
+@keyframes pulse {
+    from,
+    40% {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 0.5;
+    }
+    80%,
+    to {
+        opacity: 1;
+    }
 }
 
 /* Заголовок страницы */
@@ -332,11 +397,6 @@ body {
     font-size: 13px;
     color: gray;
 }
-.work-button {
-    margin: 20px 0 70px;
-    background-color: #18cfab;
-    font-size: 14px;
-}
 
 /* Секция Новости */
 .news {
@@ -489,6 +549,37 @@ body {
 }
 
 /* Секция Галерея */
+.grid {
+    margin-top: 70px;
+}
+/*.grid::after {
+    content: "";
+    display: block;
+    clear: both;
+}*/
+.grid-item {
+    width: 372px;
+    height: 260px;
+    float: left;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.grid-item--height2 {
+    height: 370px;
+}
+.grid1 {
+    height: 480px;
+}
+.grid1-item {
+    width: 120px;
+    height: 95px;
+    float: left;
+    margin-bottom: 6px;
+}
+.grid1-item--width2 {
+    width: 183px;
+    height: 170px;
+}
 
 /* Подвал страницы */
 .footer {
@@ -507,64 +598,4 @@ body {
 }
 .footer-ham {
     color: #18cfab;
-}
-
-/* Заимствованные стили */
-.loader-boxes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 120px;
-    margin: 0 auto;
-}
-.loader-box {
-    margin: 5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: linear-gradient(130deg, #CE9FFC 0%, #7367F0 100%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    animation: pulse 1s linear infinite alternate;
-}
-.loader-box:nth-child(1) {
-    animation-delay: 0s;
-}
-.loader-box:nth-child(2) {
-    animation-delay: 0.1s;
-}
-.loader-box:nth-child(3) {
-    animation-delay: 0.2s;
-}
-.loader-box:nth-child(4) {
-    animation-delay: 0.3s;
-}
-.loader-box:nth-child(5) {
-    animation-delay: 0.4s;
-}
-.loader-box:nth-child(6) {
-    animation-delay: 0.5s;
-}
-.loader-box:nth-child(7) {
-    animation-delay: 0.6s;
-}
-.loader-box:nth-child(8) {
-    animation-delay: 0.7s;
-}
-.loader-box:nth-child(9) {
-    animation-delay: 0.8s;
-}
-@keyframes pulse {
-    from,
-    40% {
-        opacity: 0;
-    }
-    50%
-    {
-        opacity: 0.5;
-    }
-    80%,
-    to {
-        opacity: 1;
-    }
 }

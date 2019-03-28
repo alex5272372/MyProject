@@ -1,7 +1,8 @@
 let serviceTab;
 let workTab;
-let workMore = 1;
 let peopleTab;
+let workMore = 1;
+let gridMore = 0;
 
 const displayServiceTab = function () {
     $(`.service-tab:not(:eq(${serviceTab}))`).removeClass('active-service');
@@ -57,6 +58,51 @@ const displayPeopleTab = function (newPeopleTab = null) {
         width: '144px',
         height: '144px'
     });
+};
+
+const displayRandomImages = function () {
+    let randomIndex = 0;
+
+    $(`.grid-item:not(:lt(${gridMore * 8}),.grid1,.grid-item--height2)`).each(function (index, elem) {
+        $(elem).css({
+            backgroundImage: `url("https://loremflickr.com/372/260?random=${++randomIndex + gridMore * 18}")`
+        })
+    });
+    $(`.grid-item--height2:not(:lt(${gridMore * 8}))`).each(function (index, elem) {
+        $(elem).css({
+            backgroundImage: `url("https://loremflickr.com/372/370?random=${++randomIndex + gridMore * 18}")`
+        })
+    });
+    $(`.grid1-item:not(:lt(${gridMore * 8}),.grid1-item--width2)`).each(function (index, elem) {
+        $(elem).css({
+            backgroundImage: `url("https://loremflickr.com/120/95?random=${++randomIndex + gridMore * 18}")`
+        })
+    });
+    $(`.grid1-item--width2:not(:lt(${gridMore * 8}))`).each(function (index, elem) {
+        $(elem).css({
+            backgroundImage: `url("https://loremflickr.com/183/170?random=${++randomIndex + gridMore * 18}")`
+        })
+    });
+};
+
+const displayGridItems = function () {
+    let $grid = $('.grid');
+
+    for(i = 1; i <= 8; i++) {
+        let $elem = $('<div>').addClass('grid-item');
+
+        if(i === 2 || i === 6) $elem.addClass('grid-item--height2');
+        else if(i === 3) {
+            /*$elem.addClass('grid1');
+            for(j === 1; j <= 11; j++) {
+                let $elem1 = $('<div>').addClass('grid1-item');
+                if(j <= 2) $elem1.addClass('grid1-item--width2');
+                $elem.append($elem1).masonry('appended', $elem1);
+            }*/
+        }
+        $grid.append($elem).masonry('appended', $elem);
+    }
+    displayRandomImages();
 };
 
 const ready = function () {
@@ -131,6 +177,29 @@ const ready = function () {
     });
     $('.people-right').click(function () {
         if(peopleTab < 3) displayPeopleTab(peopleTab + 1);
+    });
+
+    $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: 372,
+        gutter: 20
+    });
+
+    $('.grid1').masonry({
+        itemSelector: '.grid1-item',
+        columnWidth: 57,
+        gutter: 6
+    });
+    displayRandomImages();
+
+    $('.grid-button').click(function (event) {
+        event.preventDefault();
+        $('.grid-loader .loader-boxes').show();
+        setTimeout(function () {
+            $('.grid-loader .loader-boxes').hide();
+            gridMore++;
+            displayGridItems();
+        }, 2000)
     });
 };
 

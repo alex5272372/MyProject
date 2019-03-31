@@ -198,10 +198,10 @@ const ready = function () {
         displayPeopleTab($('.people-tab').index(event.target));
     });
     $('.people-left').click(function () {
-        if(peopleTab > 0) displayPeopleTab(peopleTab - 1);
+        displayPeopleTab(peopleTab === 0 ? 3 : peopleTab - 1);
     });
     $('.people-right').click(function () {
-        if(peopleTab < 3) displayPeopleTab(peopleTab + 1);
+        displayPeopleTab(peopleTab === 3 ? 0 : peopleTab + 1);
     });
 
     $('.grid').masonry({

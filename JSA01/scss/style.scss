@@ -1,6 +1,220 @@
-.navigation {
-  width: 320px;
+$black: black;
+$darkgrey: #202529;
+$grey: #373c3f;
+$lightgrey: #cbccce;
+$white: white;
+$green: #acd8ad;
+$blue: #a6d6e0;
+
+$fzh2: 16px;
+$fzh3: 13px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 37px;
+  background-color: $grey;
+
+  &-menu,&-logo {
+    display: none;
+  }
+
+  &-header {
+    margin-left: 19px;
+    font-size: 12px;
+    font-weight: normal;
+    color: $white;
+  }
+  &-button {
+    position: relative;
+    width: 41px;
+    height: 37px;
+    background-color: $darkgrey;
+
+    &__item {
+      position: absolute;
+      width: 21px;
+      height: 2px;
+      left: 10px;
+      background-color: $white;
+
+      &:first-child {
+        top: 10px;
+      }
+
+      &:nth-child(2) {
+        top: 17px;
+      }
+
+      &:nth-child(3) {
+        top: 24px;
+      }
+    }
+  }
+}
+
+.pizza {
+  height: 173px;
+  background: url("../img/pizza.png") center;
+  background-size: cover;
+
+  &__h2 {
+    font-size: 18px;
+    color: $white;
+
+    &:first-child {
+      padding-top: 20px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
+
+  }
+
+  &__a {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
+.options {
+  margin-top: 3px;
+  font-size: 18px;
+
+  &__item {
+    display: flex;
+    margin-top: 2px;
+    height: 75px;
+
+    &-h3 {
+      flex: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-size: cover;
+      color: $white;
+    }
+
+    &-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 71px;
+      background-color: $green;
+      text-decoration: none;
+      color: $white;
+    }
+
+    &:first-child>&-h3 {
+      background-image: url("../img/delivery.png");
+    }
+
+    &:nth-child(2)>&-h3 {
+      background-image: url("../img/salads.png");
+    }
+
+    &:nth-child(3)>&-h3 {
+      background-image: url("../img/desserts.png");
+    }
+  }
+}
+
+.header {
+  &__h2 {
+    margin: 3px;
+    font-size: $fzh2;
+    text-transform: uppercase;
+  }
+
+  &__h4 {
+    margin: 3px;
+    font-size: 10px;
+    font-weight: normal;
+    color: $lightgrey;
+  }
+
+  &__logo {
+    display: none;
+  }
+}
+
+@mixin column($position) {
+  &__h2 {
+    padding: 5px 10px;
+    font-size: $fzh2;
+    text-transform: uppercase;
+
+    @if $position == left {
+      background-color: $darkgrey;
+      color: $green;
+    } @else {
+      background-color: $green;
+      color: $white;
+    }
+  }
+
+  &__h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px;
+    font-size: $fzh3;
+    text-transform: uppercase;
+
+    &-img {
+      width: 70px;
+      height: 50px;
+      background-image: url("../img/sprite.png");
+    }
+  }
+}
+
+.left {
+  @include column(left);
+
+  &__h3:nth-of-type(2)>&__h3-img {
+    background-position: 0 -100px;
+  }
+}
+
+.right {
+  @include column(right);
+
+  &__h3:first-of-type>&__h3-img {
+    background-position: 0 -50px;
+  }
+
+  &__h3:nth-of-type(2)>&__h3-img {
+    background-position: 0 -150px;
+  }
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  background-color: $green;
+  color: $white;
+
+  &__logo {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 640px) {

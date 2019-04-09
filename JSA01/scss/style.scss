@@ -6,9 +6,6 @@ $white: white;
 $green: #acd8ad;
 $blue: #a6d6e0;
 
-$fzh2: 16px;
-$fzh3: 13px;
-
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +20,7 @@ $fzh3: 13px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 37px;
+  height: 30px;
   background-color: $grey;
 
   &-menu,&-logo {
@@ -31,22 +28,22 @@ $fzh3: 13px;
   }
 
   &-header {
-    margin-left: 19px;
+    margin-left: 15px;
     font-size: 12px;
     font-weight: normal;
     color: $white;
   }
   &-button {
     position: relative;
-    width: 41px;
-    height: 37px;
+    width: 36px;
+    height: 30px;
     background-color: $darkgrey;
 
     &__item {
       position: absolute;
-      width: 21px;
+      width: 14px;
       height: 2px;
-      left: 10px;
+      left: 12px;
       background-color: $white;
 
       &:first-child {
@@ -54,52 +51,51 @@ $fzh3: 13px;
       }
 
       &:nth-child(2) {
-        top: 17px;
+        top: 14px;
       }
 
       &:nth-child(3) {
-        top: 24px;
+        top: 18px;
       }
     }
   }
 }
 
 .pizza {
-  height: 173px;
+  height: 152px;
   background: url("../img/pizza.png") center;
   background-size: cover;
 
   &__h2 {
-    font-size: 18px;
+    font-size: 14px;
     color: $white;
 
     &:first-child {
-      padding-top: 20px;
+      padding: 14px 0 0 17px;
     }
 
     &:nth-child(2) {
-      margin-top: 10px;
+      margin: 3px 0 0 17px;
     }
 
   }
 
   &__a {
     display: block;
-    margin-top: 10px;
-    font-size: 16px;
+    margin: 5px 0 0 17px;
+    font-size: 13px;
     text-decoration: none;
     color: $blue;
   }
 }
 
 .options {
-  margin-top: 3px;
-  font-size: 18px;
+  margin-top: 4px;
 
   &__item {
     display: flex;
     margin-top: 2px;
-    height: 75px;
+    height: 65px;
 
     &-h3 {
       flex: auto;
@@ -108,6 +104,7 @@ $fzh3: 13px;
       align-items: center;
       background-position: center;
       background-size: cover;
+      font-size: 18px;
       color: $white;
     }
 
@@ -115,8 +112,9 @@ $fzh3: 13px;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 71px;
+      width: 62px;
       background-color: $green;
+      font-size: 20px;
       text-decoration: none;
       color: $white;
     }
@@ -137,14 +135,14 @@ $fzh3: 13px;
 
 .header {
   &__h2 {
-    margin: 3px;
-    font-size: $fzh2;
+    margin: 18px 0 0 7px;
+    font-size: 17px;
     text-transform: uppercase;
   }
 
   &__h4 {
-    margin: 3px;
-    font-size: 10px;
+    margin: 0 0 0 7px;
+    font-size: 9px;
     font-weight: normal;
     color: $lightgrey;
   }
@@ -156,8 +154,9 @@ $fzh3: 13px;
 
 @mixin column($position) {
   &__h2 {
-    padding: 5px 10px;
-    font-size: $fzh2;
+    margin-top: 9px;
+    padding: 5px 15px;
+    font-size: 17px;
     text-transform: uppercase;
 
     @if $position == left {
@@ -173,15 +172,33 @@ $fzh3: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 10px;
-    font-size: $fzh3;
+    margin: 10px 10px 0 15px;
+    font-size: 11px;
     text-transform: uppercase;
 
     &-img {
-      width: 70px;
-      height: 50px;
+      width: 32px;
+      height: 23px;
       background-image: url("../img/sprite.png");
+      background-size: 100%;
     }
+  }
+
+  &__li {
+    display: flex;
+    justify-content: space-between;
+    margin: 9px 14px 0 20px;
+    font-size: 12px;
+  }
+
+  &__cost {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__description {
+    margin: 3px 0 0 14px;
+    font-size: 8px;
   }
 }
 
@@ -206,6 +223,7 @@ $fzh3: 13px;
 }
 
 .footer {
+  margin-top: 40px;
   padding: 10px;
   text-align: center;
   font-size: 12px;

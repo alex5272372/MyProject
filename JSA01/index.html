@@ -12,17 +12,17 @@
 <body>
 <nav class="main nav">
     <h3 class="nav-header">Navigation</h3>
-    <div class="nav-menu">
-        <a href="#" class="nav-menu__item">Pizza delivery</a>
-        <a href="#" class="nav-menu__item">UI/UX salads</a>
-        <a href="#" class="nav-menu__item">Desserts</a>
-        <a href="#" class="nav-menu__item">About us</a>
-        <a href="#" class="nav-menu__item">Contacts</a>
-    </div>
     <div class="nav-button">
         <i class="nav-button__item"></i>
         <i class="nav-button__item"></i>
         <i class="nav-button__item"></i>
+        <div class="nav-button__menu">
+            <a href="#" class="nav-button__menu-item">Pizza delivery</a>
+            <a href="#" class="nav-button__menu-item">UI/UX salads</a>
+            <a href="#" class="nav-button__menu-item">Desserts</a>
+            <a href="#" class="nav-button__menu-item">About us</a>
+            <a href="#" class="nav-button__menu-item">Contacts</a>
+        </div>
     </div>
     <img src="img/pizzaLogo.png" alt="pizzaLogo not found" class="nav-logo">
 </nav>
@@ -46,68 +46,74 @@
     </div>
 </section>
 <header class="main header">
-    <h2 class="header__h2">Neque ero ullamcorper sed</h2>
-    <h4 class="header__h4">Ultrices cursus sit amet placerat tortor</h4>
+    <div class="header__text">
+        <h2 class="header__h2">Neque ero ullamcorper sed</h2>
+        <h4 class="header__h4">Ultrices cursus sit amet placerat tortor</h4>
+    </div>
     <img src="img/menuLogo.png" alt="menuLogo not found" class="header__logo">
 </header>
-<section class="main left">
-    <h2 class="left__h2">Tincidunt at mauris</h2>
-    <div class="left__h3">
-        <h3 class="left__h3-text">Id hendrerit velit quis</h3>
-        <div class="left__h3-img"></div>
+<section class="main col">
+    <div class="left">
+        <h2 class="left__h2">Tincidunt at mauris</h2>
+        <div class="left__h3">
+            <h3 class="left__h3-text">Id hendrerit velit quis</h3>
+            <div class="left__h3-img"></div>
+        </div>
+        <ul class="left__ul">
+            <li class="left__li">&middot; Lass aptent taciti<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="left__li">&middot; Nec fermentum nibh<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="left__li">&middot; Eu dolor accumsan pharetra<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="left__li">&middot; Non duis dictum eros nec<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+        </ul>
+        <div class="left__h3">
+            <h3 class="left__h3-text">Id dolor pellentesque</h3>
+            <div class="left__h3-img"></div>
+        </div>
+        <ul class="left__ul">
+            <li class="left__li">&middot; Lass aptent taciti<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="left__li">&middot; Nec fermentum nibh<span class="left__cost">$1200</span></li>
+            <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+        </ul>
     </div>
-    <ul class="left__ul">
-        <li class="left__li">Lass aptent taciti<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="left__li">Nec fermentum nibh<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="left__li">Eu dolor accumsan pharetra<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="left__li">Non duis dictum eros nec<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-    </ul>
-    <div class="left__h3">
-        <h3 class="left__h3-text">Id dolor pellentesque</h3>
-        <div class="left__h3-img"></div>
+    <div class="right">
+        <h2 class="right__h2">Vestibulum augue et</h2>
+        <div class="right__h3">
+            <h3 class="right__h3-text">Augue proin eleifend</h3>
+            <div class="right__h3-img"></div>
+        </div>
+        <ul class="right__ul">
+            <li class="right__li">&middot; Lass aptent taciti<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="right__li">&middot; Nec fermentum nibh<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="right__li">&middot; Eu dolor accumsan pharetra<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="right__li">&middot; Non duis dictum eros nec<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+        </ul>
+        <div class="right__h3">
+            <h3 class="right__h3-text">Pharetra at sit amet sem</h3>
+            <div class="right__h3-img"></div>
+        </div>
+        <ul class="right__ul">
+            <li class="right__li">&middot; Lass aptent taciti<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+            <li class="right__li">&middot; Nec fermentum nibh<span class="right__cost">$1200</span></li>
+            <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
+        </ul>
     </div>
-    <ul class="left__ul">
-        <li class="left__li">Lass aptent taciti<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="left__li">Nec fermentum nibh<span class="left__cost">$1200</span></li>
-        <p class="left__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-    </ul>
-</section>
-<section class="main right">
-    <h2 class="right__h2">Vestibulum augue et</h2>
-    <div class="right__h3">
-        <h3 class="right__h3-text">Augue proin eleifend</h3>
-        <div class="right__h3-img"></div>
-    </div>
-    <ul class="right__ul">
-        <li class="right__li">Lass aptent taciti<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="right__li">Nec fermentum nibh<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="right__li">Eu dolor accumsan pharetra<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="right__li">Non duis dictum eros nec<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-    </ul>
-    <div class="right__h3">
-        <h3 class="right__h3-text">Pharetra at sit amet sem</h3>
-        <div class="right__h3-img"></div>
-    </div>
-    <ul class="right__ul">
-        <li class="right__li">Lass aptent taciti<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-        <li class="right__li">Nec fermentum nibh<span class="right__cost">$1200</span></li>
-        <p class="right__description">Praesent hendrerit massa ut libero bibendum pulvinar. Pellenteue eget tortor dolor. Nam quis nunc et eros mollis facilisis.</p>
-    </ul>
 </section>
 <footer class="main footer">
     <img src="img/pizzaLogo.png" alt="pizzaLogo not found" class="footer__logo">
-    <p class="footer__p">Best pizza from 2018 year.</p>
-    <p class="footer__p">New UA/UX salads - not boring, only fun.</p>
+    <div class="footer__text">
+        <p class="footer__p">Best pizza from 2018 year.</p>
+        <p class="footer__p">New UA/UX salads - not boring, only fun.</p>
+    </div>
 </footer>
 </body>
 </html>

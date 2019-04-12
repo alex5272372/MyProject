@@ -157,3 +157,6 @@ https://dan-it.gitlab.io/fe-book/git/git_reset_password.html
 07.02.2019 yamnyk
 
 http://cdn.cs50.net/2016/x/psets/0/pset0/bulbs.html
+
+12.04.2019 Ira Stoetskaya
+https://docs.google.com/document/d/1fO-C6vsUCKZ6ntF4w4lgE98Xn1k4hd7JxUHmZgxUEz0/edit

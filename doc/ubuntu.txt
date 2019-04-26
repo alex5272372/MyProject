@@ -28,7 +28,7 @@ xrdb $HOME/.Xresources
 startlxde &
 
 $ sudo chmod +x ~/.vnc/xstartup
-$ vncserversudo
+$ vncserver
 
 Download TightVNC Viewer for Windows: https://www.tightvnc.com/
 ----------------------------------------------------------------
@@ -62,3 +62,14 @@ $ sudo systemctl start apache2
 $ sudo systemctl stop apache2
 $ hostname -I
 ----------------------------------------------------------------
+
+PostgreSQL
+----------
+$ sudo apt-get install postgresql
+$ sudo passwd postgres
+$ su - postgres
+$ psql
+# \password postgres
+# CREATE DATABASE testdb;
+# \l
+# \q

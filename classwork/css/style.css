@@ -2,8 +2,3 @@ body{
     background-image: url("../img/bg.jpg");
     background-size: cover;
 }
-
-.slick-slider {
-    display: inline-block;
-    width: 850px;
-}

@@ -1,24 +1,93 @@
-invertColors = (colors) => {
-    if(!Array.isArray(colors)) colors = [colors];
-    return colors.map(value => {
-        if(value[0] === '#') value = value.slice(1);
+/*
+const Student = {
+    getAverageScore: function () {
+        let sumOfMarks = 0;
+        let numberOfSubjects = 0;
 
-        if(value.length === 3) value = value[0] + value[0] + value[1] + value[1] + value[2] + value[2];
-        else if(value.length === 4) value = value[0] + value[0] + value[1] + value[1] + value[2] + value[2] + value[3] + value[3];
-        else if(value.length !== 6 && value.length !== 8) return '';
-
-        let resValue = parseInt(value, 16);
-        let resColor = '';
-        while(resValue) {
-            let curValue = 255 - resValue % 256;
-            resColor = curValue = 0 ? '00' : curValue < 16 ? '0' : '' + curValue.toString(16) + resColor;
-            resValue = Math.trunc(resValue / 256);
+        for(let key in this.tabel) {
+            sumOfMarks += this.tabel[key];
+            numberOfSubjects++;
         }
-
-        if(resColor) return '#' + ('000000' + resColor).slice(-value.length);
-        else return '';
-    })
-        .filter(value => value.length);
+        return sumOfMarks / numberOfSubjects;
+    }
 };
 
-console.log('ok');
+const student1 = {
+  firstName: 'Алина',
+  lastName: 'Коваленко',
+  tabel: {
+      math: 10,
+      history: 11,
+      geography: 3
+  }
+};
+const student2 = {
+  firstName: 'Мария',
+  lastName: 'Чупаенко',
+  tabel: {
+      math: 12,
+      history: 12,
+      geography: 12
+  }
+};
+const student3 = {
+  firstName: 'Антон',
+  lastName: 'Геращенко',
+  tabel: {
+      math: 4,
+      history: 9,
+      geography: 6
+  },
+};
+
+student3.__proto__ = Student
+
+console.log(student3.getAverageScore());
+*/
+
+/*
+const DanITStudent = {
+    checkPass: function () {
+        const passDate = new Date(this._datePass);
+        const currentDate = new Date();
+        return passDate > currentDate;
+    },
+    changePass: function (date) {
+        this._datePass = date;
+    }
+};
+
+const student1 = {
+    firstName: 'Andrew',
+    lastName: 'Jenkins',
+    _datePass: '2019-02-18'
+}
+
+student1.__proto__ = DanITStudent;
+
+const student2 = {
+    firstName: 'Alena',
+    lastName: 'Indesit',
+    _datePass: '2019-10-18'
+};
+
+student2.__proto__ = DanITStudent;
+
+console.log(student1.checkPass());
+console.log(student2.checkPass());
+student1.changePass('2020-03-05');
+console.log(student1.checkPass());
+*/
+
+const Product = function(id, shortName, fullName, price) {
+    this.id = id;
+    this.shortName = shortName;
+    this.fullName = fullName;
+    this.price = price;
+    this.calcStockPrice = function (value) {
+        return this.price * (1 - value / 100);
+    }
+};
+
+const lenovo = new Product(129, 'len', 'lenovo', 20000);
+console.log(lenovo.calcStockPrice(10));

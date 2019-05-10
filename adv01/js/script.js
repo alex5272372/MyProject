@@ -34,10 +34,12 @@ Hamburger.STUFFING_POTATO = {
     calories: 10
 };
 Hamburger.TOPPING_MAYO = {
+    name: 'майонез',
     price: 20,
     calories: 5
 };
 Hamburger.TOPPING_SPICE = {
+    name: 'приправа',
     price: 15,
     calories: 0
 };
@@ -50,7 +52,13 @@ Hamburger.TOPPING_SPICE = {
  * @throws {HamburgerException}  При неправильном использовании
  */
 Hamburger.prototype.addTopping = function (topping) {
-    if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
+    try {
+        if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
+            else throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
+    } catch (e) {
+        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
+        else throw e;
+    }
 };
 
 /**
@@ -61,8 +69,14 @@ Hamburger.prototype.addTopping = function (topping) {
  * @throws {HamburgerException}  При неправильном использовании
  */
 Hamburger.prototype.removeTopping = function (topping) {
-    let index = this._toppings.indexOf(topping);
-    if (index !== -1) this._toppings.splice(index, 1);
+    try {
+        let index = this._toppings.indexOf(topping);
+        if (index !== -1) this._toppings.splice(index, 1);
+            else throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
+    } catch (e) {
+        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
+        else throw e;
+    }
 };
 
 /**
@@ -110,9 +124,12 @@ Hamburger.prototype.calculateCalories = function () {
  * Подробности хранятся в свойстве message.
  * @constructor
  */
-function HamburgerException () {
-
+function HamburgerException (message) {
+    this.message = message;
+    this.name = "HamburgerError";
 }
+HamburgerException.prototype = Object.create(Error.prototype);
+HamburgerException.prototype.constructor = HamburgerException;
 
 // маленький гамбургер с начинкой из сыра
 var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);

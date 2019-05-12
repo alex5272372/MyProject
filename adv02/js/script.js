@@ -12,126 +12,126 @@ class Hamburger {
         this._size = size;
         this._stuffing = stuffing;
     }
-}
 
-/* Размеры, виды начинок и добавок */
-Hamburger.SIZE_SMALL = {
-    price: 50,
-    calories: 20
-};
-Hamburger.SIZE_LARGE = {
-    price: 100,
-    calories: 40
-};
-Hamburger.STUFFING_CHEESE = {
-    price: 10,
-    calories: 20
-};
-Hamburger.STUFFING_SALAD = {
-    price: 20,
-    calories: 5
-};
-Hamburger.STUFFING_POTATO = {
-    price: 15,
-    calories: 10
-};
-Hamburger.TOPPING_MAYO = {
-    name: 'майонез',
-    price: 20,
-    calories: 5
-};
-Hamburger.TOPPING_SPICE = {
-    name: 'приправа',
-    price: 15,
-    calories: 0
-};
+    /* Размеры, виды начинок и добавок */
+    static SIZE_SMALL = {
+        price: 50,
+        calories: 20
+    };
+    static SIZE_LARGE = {
+        price: 100,
+        calories: 40
+    };
+    static STUFFING_CHEESE = {
+        price: 10,
+        calories: 20
+    };
+    static STUFFING_SALAD = {
+        price: 20,
+        calories: 5
+    };
+    static STUFFING_POTATO = {
+        price: 15,
+        calories: 10
+    };
+    static TOPPING_MAYO = {
+        name: 'майонез',
+        price: 20,
+        calories: 5
+    };
+    static TOPPING_SPICE = {
+        name: 'приправа',
+        price: 15,
+        calories: 0
+    };
 
-/**
- * Добавить добавку к гамбургеру. Можно добавить несколько
- * добавок, при условии, что они разные.
- *
- * @param topping     Тип добавки
- * @throws {HamburgerException}  При неправильном использовании
- */
-Hamburger.prototype.addTopping = function (topping) {
-    try {
-        if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
+    /**
+     * Добавить добавку к гамбургеру. Можно добавить несколько
+     * добавок, при условии, что они разные.
+     *
+     * @param topping     Тип добавки
+     * @throws {HamburgerException}  При неправильном использовании
+     */
+    addTopping(topping) {
+        try {
+            if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
             else throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
-    } catch (e) {
-        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
-        else throw e;
-    }
-};
+        } catch (e) {
+            if (e instanceof HamburgerException) console.error(e.toString());
+            else throw e;
+        }
+    };
 
-/**
- * Убрать добавку, при условии, что она ранее была
- * добавлена.
- *
- * @param topping   Тип добавки
- * @throws {HamburgerException}  При неправильном использовании
- */
-Hamburger.prototype.removeTopping = function (topping) {
-    try {
-        let index = this._toppings.indexOf(topping);
-        if (index !== -1) this._toppings.splice(index, 1);
+    /**
+     * Убрать добавку, при условии, что она ранее была
+     * добавлена.
+     *
+     * @param topping   Тип добавки
+     * @throws {HamburgerException}  При неправильном использовании
+     */
+    removeTopping(topping) {
+        try {
+            let index = this._toppings.indexOf(topping);
+            if (index !== -1) this._toppings.splice(index, 1);
             else throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
-    } catch (e) {
-        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
-        else throw e;
-    }
-};
+        } catch (e) {
+            if (e instanceof HamburgerException) console.error(e.toString());
+            else throw e;
+        }
+    };
 
-/**
- * Получить список добавок.
- *
- * @return {Array} Массив добавленных добавок, содержит константы
- *                 Hamburger.TOPPING_*
- */
-Hamburger.prototype.getToppings = function () {
-    return this._toppings;
-};
+    /**
+     * Получить список добавок.
+     *
+     * @return {Array} Массив добавленных добавок, содержит константы
+     *                 Hamburger.TOPPING_*
+     */
+    getToppings() {
+        return this._toppings;
+    };
 
-/**
- * Узнать размер гамбургера
- */
-Hamburger.prototype.getSize = function () {
-    return this._size;
-};
+    /**
+     * Узнать размер гамбургера
+     */
+    getSize() {
+        return this._size;
+    };
 
-/**
- * Узнать начинку гамбургера
- */
-Hamburger.prototype.getStuffing = function () {
-    return this._stuffing;
-};
+    /**
+     * Узнать начинку гамбургера
+     */
+    getStuffing() {
+        return this._stuffing;
+    };
 
-/**
- * Узнать цену гамбургера
- * @return {Number} Цена в тугриках
- */
-Hamburger.prototype.calculatePrice = function () {
-    return this._toppings.reduce((prevVal, curVal) => prevVal + curVal.price, this._size.price + this._stuffing.price);
-};
+    /**
+     * Узнать цену гамбургера
+     * @return {Number} Цена в тугриках
+     */
+    calculatePrice() {
+        return this._toppings.reduce((prevVal, curVal) => prevVal + curVal.price, this._size.price + this._stuffing.price);
+    };
 
-/**
- * Узнать калорийность
- * @return {Number} Калорийность в калориях
- */
-Hamburger.prototype.calculateCalories = function () {
-    return this._toppings.reduce((prevVal, curVal) => prevVal + curVal.calories, this._size.calories + this._stuffing.calories);
-};
+    /**
+     * Узнать калорийность
+     * @return {Number} Калорийность в калориях
+     */
+    calculateCalories() {
+        return this._toppings.reduce((prevVal, curVal) => prevVal + curVal.calories, this._size.calories + this._stuffing.calories);
+    };
+}
 
 /**
  * Представляет информацию об ошибке в ходе работы с гамбургером.
  * Подробности хранятся в свойстве message.
  * @constructor
  */
-function HamburgerException (message) {
-    this.message = message;
-    this.name = "HamburgerError";
+class HamburgerException extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "HamburgerError";
+    }
 }
-HamburgerException.prototype = Object.create(Error.prototype);
-HamburgerException.prototype.constructor = HamburgerException;
 
 // маленький гамбургер с начинкой из сыра
 var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);

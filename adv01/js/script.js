@@ -7,9 +7,14 @@
  * @throws {HamburgerException}  При неправильном использовании
  */
 function Hamburger(size, stuffing) {
-    this._toppings = [];
-    this._size = size;
-    this._stuffing = stuffing;
+    try {
+        this._toppings = [];
+        this._size = size;
+        this._stuffing = stuffing;
+    } catch (e) {
+        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
+        else throw e;
+    }
 }
 
 /* Размеры, виды начинок и добавок */
@@ -56,7 +61,7 @@ Hamburger.prototype.addTopping = function (topping) {
         if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
             else throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
     } catch (e) {
-        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
+        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
         else throw e;
     }
 };
@@ -74,7 +79,7 @@ Hamburger.prototype.removeTopping = function (topping) {
         if (index !== -1) this._toppings.splice(index, 1);
             else throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
     } catch (e) {
-        if (e instanceof HamburgerException) console.log(e.name + ': ' + e.message);
+        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
         else throw e;
     }
 };

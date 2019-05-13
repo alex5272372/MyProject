@@ -6,44 +6,36 @@
  * @param stuffing    Начинка
  * @throws {HamburgerException}  При неправильном использовании
  */
+class HamburgerItem {
+    constructor(price, calories, name = '') {
+        this.price = price;
+        this.calories = calories;
+        this.name = name;
+    }
+}
+
 class Hamburger {
     constructor(size, stuffing) {
-        this._toppings = [];
-        this._size = size;
-        this._stuffing = stuffing;
+        try {
+            this._toppings = [];
+            if (size instanceof HamburgerItem) this._size = size;
+            else throw new HamburgerException('Параметр size должен быть объектом');
+            if (stuffing instanceof HamburgerItem) this._stuffing = stuffing;
+            else throw new HamburgerException('Параметр stuffing должен быть объектом');
+        } catch (e) {
+            if (e instanceof HamburgerException) console.error(e.toString());
+            else throw e;
+        }
     }
 
     /* Размеры, виды начинок и добавок */
-    static SIZE_SMALL = {
-        price: 50,
-        calories: 20
-    };
-    static SIZE_LARGE = {
-        price: 100,
-        calories: 40
-    };
-    static STUFFING_CHEESE = {
-        price: 10,
-        calories: 20
-    };
-    static STUFFING_SALAD = {
-        price: 20,
-        calories: 5
-    };
-    static STUFFING_POTATO = {
-        price: 15,
-        calories: 10
-    };
-    static TOPPING_MAYO = {
-        name: 'майонез',
-        price: 20,
-        calories: 5
-    };
-    static TOPPING_SPICE = {
-        name: 'приправа',
-        price: 15,
-        calories: 0
-    };
+    static SIZE_SMALL = new HamburgerItem(50, 20);
+    static SIZE_LARGE = new HamburgerItem(100, 40);
+    static STUFFING_CHEESE = new HamburgerItem(10, 20);
+    static STUFFING_SALAD = new HamburgerItem(20, 5);
+    static STUFFING_POTATO = new HamburgerItem(15, 10);
+    static TOPPING_MAYO = new HamburgerItem(50, 20, 'майонез');
+    static TOPPING_SPICE = new HamburgerItem(50, 20, 'приправа');
 
     /**
      * Добавить добавку к гамбургеру. Можно добавить несколько

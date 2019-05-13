@@ -9,8 +9,10 @@
 function Hamburger(size, stuffing) {
     try {
         this._toppings = [];
-        this._size = size;
-        this._stuffing = stuffing;
+        if (size instanceof Object) this._size = size;
+            else throw new HamburgerException('Параметр size должен быть объектом');
+        if (stuffing instanceof Object) this._stuffing = stuffing;
+            else throw new HamburgerException('Параметр stuffing должен быть объектом');
     } catch (e) {
         if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
         else throw e;

@@ -9,13 +9,19 @@
 function Hamburger(size, stuffing) {
     try {
         this._toppings = [];
-        if (size instanceof Object) this._size = size;
-            else throw new HamburgerException('Параметр size должен быть объектом');
-        if (stuffing instanceof Object) this._stuffing = stuffing;
-            else throw new HamburgerException('Параметр stuffing должен быть объектом');
+
+        if (arguments.length) {
+            this._size = size;
+            this._stuffing = stuffing;
+        } else {
+            throw new HamburgerException('В функцию-конструктор не переданы параметры');
+        }
     } catch (e) {
-        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
-        else throw e;
+        if (e instanceof HamburgerException) {
+            console.error(e.name + ': ' + e.message);
+        } else {
+            throw e;
+        }
     }
 }
 
@@ -60,11 +66,17 @@ Hamburger.TOPPING_SPICE = {
  */
 Hamburger.prototype.addTopping = function (topping) {
     try {
-        if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
-            else throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
+        if (this._toppings.indexOf(topping) === -1) {
+            this._toppings.push(topping);
+        } else {
+            throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
+        }
     } catch (e) {
-        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
-        else throw e;
+        if (e instanceof HamburgerException) {
+            console.error(e.name + ': ' + e.message);
+        } else {
+            throw e;
+        }
     }
 };
 
@@ -78,11 +90,17 @@ Hamburger.prototype.addTopping = function (topping) {
 Hamburger.prototype.removeTopping = function (topping) {
     try {
         let index = this._toppings.indexOf(topping);
-        if (index !== -1) this._toppings.splice(index, 1);
-            else throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
+        if (index !== -1) {
+            this._toppings.splice(index, 1);
+        } else {
+            throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
+        }
     } catch (e) {
-        if (e instanceof HamburgerException) console.error(e.name + ': ' + e.message);
-        else throw e;
+        if (e instanceof HamburgerException) {
+            console.error(e.name + ': ' + e.message);
+        } else {
+            throw e;
+        }
     }
 };
 

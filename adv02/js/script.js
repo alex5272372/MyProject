@@ -18,13 +18,22 @@ class Hamburger {
     constructor(size, stuffing) {
         try {
             this._toppings = [];
-            if (size instanceof HamburgerItem) this._size = size;
-            else throw new HamburgerException('Параметр size должен быть объектом');
-            if (stuffing instanceof HamburgerItem) this._stuffing = stuffing;
-            else throw new HamburgerException('Параметр stuffing должен быть объектом');
+            if (size instanceof HamburgerItem) {
+                this._size = size;
+            } else {
+                throw new HamburgerException('Параметр size должен быть объектом');
+            }
+            if (stuffing instanceof HamburgerItem) {
+                this._stuffing = stuffing;
+            } else {
+                throw new HamburgerException('Параметр stuffing должен быть объектом');
+            }
         } catch (e) {
-            if (e instanceof HamburgerException) console.error(e.toString());
-            else throw e;
+            if (e instanceof HamburgerException) {
+                console.error(e.toString());
+            } else {
+                throw e;
+            }
         }
     }
 
@@ -46,11 +55,17 @@ class Hamburger {
      */
     addTopping(topping) {
         try {
-            if (this._toppings.indexOf(topping) === -1) this._toppings.push(topping);
-            else throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
+            if (this._toppings.indexOf(topping) === -1) {
+                this._toppings.push(topping);
+            } else {
+                throw new HamburgerException(`Добавка ${topping.name} уже в гамбургере`);
+            }
         } catch (e) {
-            if (e instanceof HamburgerException) console.error(e.toString());
-            else throw e;
+            if (e instanceof HamburgerException) {
+                console.error(e.toString());
+            } else {
+                throw e;
+            }
         }
     };
 
@@ -64,11 +79,17 @@ class Hamburger {
     removeTopping(topping) {
         try {
             let index = this._toppings.indexOf(topping);
-            if (index !== -1) this._toppings.splice(index, 1);
-            else throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
+            if (index !== -1) {
+                this._toppings.splice(index, 1);
+            } else {
+                throw new HamburgerException(`Добавки ${topping.name} нету в гамбургере`);
+            }
         } catch (e) {
-            if (e instanceof HamburgerException) console.error(e.toString());
-            else throw e;
+            if (e instanceof HamburgerException) {
+                console.error(e.toString());
+            } else {
+                throw e;
+            }
         }
     };
 

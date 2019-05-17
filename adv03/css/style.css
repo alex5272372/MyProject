@@ -1,0 +1,17 @@
+.table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.cell {
+    width: 25px;
+    height: 25px;
+    border: 1px solid grey;
+    background-color: white;
+}
+.cell-black,
+.table-black .cell {
+    background-color: black;
+}
+.table-black .cell-black {
+    background-color: white;
+}

@@ -1,0 +1,24 @@
+body {
+    font-family: 'Arial', 'sans-serif';
+    text-align: center;
+    margin: 0 auto;
+}
+#boardSection {
+    display: inline-block;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    border: 10px solid grey;
+}
+#myTankImg,
+#tank1Img,
+#tank2Img,
+#tank3Img,
+#tank4Img {
+    position: absolute;
+}
+#timeSpan {
+    margin-left: 50px;
+    font-size: 20px;
+}

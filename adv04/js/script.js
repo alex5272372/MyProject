@@ -1,12 +1,10 @@
-const maxPos = 574;
-
 class Unit {
-    constructor() {
+    constructor(maxPos) {
         this.left = parseInt(Math.random() * maxPos);
         this.top = parseInt(Math.random() * maxPos);
         this.rotate = parseInt(Math.random() * 4);
     }
-    makeStep() {
+    makeStep(maxPos) {
         if (this.rotate === 0 && this.left > 0
         || this.rotate === 1 && this.top > 0
         || this.rotate === 2 && this.left < maxPos
@@ -22,12 +20,12 @@ class Unit {
     }
 }
 class Tank extends Unit {
-    constructor() {
-        super();
+    constructor(maxPos) {
+        super(maxPos);
         this.step = parseInt(Math.random() * maxPos);
     }
-    makeStep() {
-        if (this.step && super.makeStep()) {
+    makeStep(maxPos) {
+        if (this.step && super.makeStep(maxPos)) {
             this.step--;
         } else {
             this.rotate = parseInt(Math.random() * 4);
@@ -36,12 +34,12 @@ class Tank extends Unit {
     }
 }
 class MyTank extends Unit {
-    constructor() {
-        super();
+    constructor(maxPos) {
+        super(maxPos);
         this.pressed = [];
     }
-    makeStep() {
-        if (this.pressed.length) super.makeStep();
+    makeStep(maxPos) {
+        if (this.pressed.length) super.makeStep(maxPos);
     }
     addKey(keyCode) {
         if (keyCode === 32) {
@@ -61,50 +59,53 @@ class MyTank extends Unit {
     }
 }
 class Board {
-    constructor() {
-        this.myTank = new MyTank();
-        this.tank1 = new Tank();
-        this.tank2 = new Tank();
-        this.tank3 = new Tank();
-        this.tank4 = new Tank();
+    constructor(maxPos, tanksCount) {
+        this.myTank = new MyTank(maxPos);
         this.time = 0;
+        this.maxPos = maxPos;
+        this.tanks = [];
+
+        for (let i = 0; i < tanksCount; i++) {
+            this.tanks.push(new Tank(maxPos));
+
+            let tankElement = document.createElement('img');
+            tankElement.setAttribute('src', 'img/tank.png');
+            tankElement.setAttribute('alt', `tank${i + 1}`);
+            tankElement.className = 'tankImg';
+            boardSection.append(tankElement);
+        }
+
+        boardSection.style.width = (maxPos + 26).toString() + 'px';
+        boardSection.style.height = (maxPos + 26).toString() + 'px';
     }
     displayTanks() {
         myTankImg.style.left = this.myTank.left.toString() + 'px';
         myTankImg.style.top = this.myTank.top.toString() + 'px';
         myTankImg.style.transform = `rotate(${this.myTank.rotate * 90}deg)`;
-        tank1Img.style.left = this.tank1.left.toString() + 'px';
-        tank1Img.style.top = this.tank1.top.toString() + 'px';
-        tank1Img.style.transform = `rotate(${this.tank1.rotate * 90}deg)`;
-        tank2Img.style.left = this.tank2.left.toString() + 'px';
-        tank2Img.style.top = this.tank2.top.toString() + 'px';
-        tank2Img.style.transform = `rotate(${this.tank2.rotate * 90}deg)`;
-        tank3Img.style.left = this.tank3.left.toString() + 'px';
-        tank3Img.style.top = this.tank3.top.toString() + 'px';
-        tank3Img.style.transform = `rotate(${this.tank3.rotate * 90}deg)`;
-        tank4Img.style.left = this.tank4.left.toString() + 'px';
-        tank4Img.style.top = this.tank4.top.toString() + 'px';
-        tank4Img.style.transform = `rotate(${this.tank4.rotate * 90}deg)`;
+
+        let tankElements = document.getElementsByClassName('tankImg');
+        this.tanks.forEach((value, index) => {
+            tankElements[index].style.left = value.left.toString() + 'px';
+            tankElements[index].style.top = value.top.toString() + 'px';
+            tankElements[index].style.transform = `rotate(${value.rotate * 90}deg)`;
+        });
     }
     makeStep() {
-        this.myTank.makeStep();
-        this.tank1.makeStep();
-        this.tank2.makeStep();
-        this.tank3.makeStep();
-        this.tank4.makeStep();
-        this.displayTanks();
+        this.myTank.makeStep(this.maxPos);
+        this.tanks.forEach(value => value.makeStep(this.maxPos));
+        this.displayTanks(this.maxPos);
         this.time += .025;
         timeSpan.textContent = parseInt(this.time) + ' s';
     }
 }
 
-let board = new Board();
+let board = new Board(574, 4);
 board.displayTanks();
 
 let timerId;
 startButton.onclick = function() {
     timerId = setInterval(function() {
-        board.makeStep();
+        board.makeStep(board.maxPos);
     }, 25);
 
     startButton.disabled = true;

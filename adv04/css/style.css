@@ -6,20 +6,14 @@ body {
 #boardSection {
     display: inline-block;
     position: relative;
-    width: 600px;
-    height: 600px;
     background-color: black;
     border: 26px solid grey;
-    /*border-image-source: url(../img/solidWall.png);
+    border-image-source: url(../img/borderWall.png);
     border-image-slice: 26;
-    border-image-width: 100%;
-    border-image-repeat: repeat;*/
+    border-image-repeat: repeat;
 }
 #myTankImg,
-#tank1Img,
-#tank2Img,
-#tank3Img,
-#tank4Img {
+.tankImg {
     position: absolute;
 }
 #timeSpan {

@@ -7,17 +7,16 @@ class Unit {
         this.rotate = parseInt(Math.random() * 4);
     }
     makeStep() {
-        if (this.rotate === 0 && this.top > 0
-        || this.rotate === 1 && this.left < maxPos
-        || this.rotate === 2 && this.top < maxPos
-        || this.rotate === 3 && this.left > 0) {
-            if (this.rotate === 0) this.top--;
-            if (this.rotate === 1) this.left++;
-            if (this.rotate === 2) this.top++;
-            if (this.rotate === 3) this.left--;
+        if (this.rotate === 0 && this.left > 0
+        || this.rotate === 1 && this.top > 0
+        || this.rotate === 2 && this.left < maxPos
+        || this.rotate === 3 && this.top < maxPos) {
+            if (this.rotate === 0) this.left--;
+            if (this.rotate === 1) this.top--;
+            if (this.rotate === 2) this.left++;
+            if (this.rotate === 3) this.top++;
             return true;
         } else {
-            this.rotate = parseInt(Math.random() * 4);
             return false;
         }
     }
@@ -31,6 +30,7 @@ class Tank extends Unit {
         if (this.step && super.makeStep()) {
             this.step--;
         } else {
+            this.rotate = parseInt(Math.random() * 4);
             this.step = parseInt(Math.random() * maxPos);
         }
     }
@@ -38,10 +38,26 @@ class Tank extends Unit {
 class MyTank extends Unit {
     constructor() {
         super();
-        this.go = false;
+        this.pressed = [];
     }
     makeStep() {
-        if (this.go) super.makeStep();
+        if (this.pressed.length) super.makeStep();
+    }
+    addKey(keyCode) {
+        if (keyCode === 32) {
+            // fire
+
+        } else if (keyCode >= 37 && keyCode <= 40 && this.pressed.indexOf(keyCode) === -1) {
+            this.pressed.unshift(keyCode);
+            this.rotate = this.pressed[0] - 37;
+        }
+    }
+    removeKey(keyCode) {
+        let index = this.pressed.indexOf(keyCode);
+        if (keyCode >= 37 && keyCode <= 40 && index !== -1) {
+            this.pressed.splice(index, 1);
+            if (this.pressed.length) this.rotate = this.pressed[0] - 37;
+        }
     }
 }
 class Board {
@@ -101,29 +117,8 @@ stopButton.onclick = function() {
     stopButton.disabled = true;
 };
 document.body.onkeydown = function(event) {
-  console.dir(event.keyCode);
-    if (event.keyCode === 32) {
-        // fire
-
-    } else if (event.keyCode === 37) {
-        board.myTank.go = true;
-        board.myTank.rotate = 3;
-
-    } else if (event.keyCode === 38) {
-        board.myTank.go = true;
-        board.myTank.rotate = 0;
-
-    } else if (event.keyCode === 39) {
-        board.myTank.go = true;
-        board.myTank.rotate = 1;
-
-    } else if (event.keyCode === 40) {
-        board.myTank.go = true;
-        board.myTank.rotate = 2;
-    }
+    board.myTank.addKey(event.keyCode);
 };
 document.body.onkeyup = function (event) {
-    if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40) {
-        board.myTank.go = false;
-    }
+    board.myTank.removeKey(event.keyCode);
 };

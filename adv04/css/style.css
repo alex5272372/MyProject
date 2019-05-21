@@ -9,7 +9,11 @@ body {
     width: 600px;
     height: 600px;
     background-color: black;
-    border: 10px solid grey;
+    border: 26px solid grey;
+    /*border-image-source: url(../img/solidWall.png);
+    border-image-slice: 26;
+    border-image-width: 100%;
+    border-image-repeat: repeat;*/
 }
 #myTankImg,
 #tank1Img,

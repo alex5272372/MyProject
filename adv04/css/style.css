@@ -12,11 +12,24 @@ body {
     border-image-slice: 26;
     border-image-repeat: repeat;
 }
+.bullet {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+}
 #myTankImg,
 .tankImg {
     position: absolute;
 }
-#timeSpan {
-    margin-left: 50px;
+#timeSpan,
+#myTankSpan,
+#tankSpan {
+    margin-left: 20px;
     font-size: 20px;
+}
+.tank-span-img {
+    margin-left: 40px;
+    width: 20px;
+    height: 20px;
 }

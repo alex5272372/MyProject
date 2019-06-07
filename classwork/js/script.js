@@ -1,63 +1,17 @@
-class Cell {
-    constructor() {
-        // '' for empty, 'X' - player X, 'O' - player O
-        this.value = '';
-    }
-    fill(player) {
-        this.value = player;
-    }
-    clear() {
-        this.value = '';
-    }
-}
+const btnWeather = document.getElementById('btnWeather');
 
+btnWeather.onclick = () => {
+    const xhr = new XMLHttpRequest();
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q=Kiev&appid=71e68a36a84fd68e61923c82e76a6299';
 
-class Board {
-    constructor() {
-        this.board = [
-            [new Cell(), new Cell(), new Cell()],
-            [new Cell(), new Cell(), new Cell()],
-            [new Cell(), new Cell(), new Cell()]
-        ];
-        this.currentPlayer = 'X';
-    }
-    showBoard() {
-        return this.board.map((item)=>{
-            return item.map((cell)=>{
-                return cell.value;
-            })
-        })
-    }
-    turn(x,y) {
-        // TODO: rewrite with try catch
-        if(this.board[y][x].value) {
-            return false
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState = 4 && xhr.status == 200) {
+            const result = JSON.parse(xhr.responseText);
+            document.getElementById('imgIcon').src = `https://openweathermap.org/img/w/${result.weather[0].icon}.png`;
+            document.getElementById('spanTemp').innerText = Math.floor(result.main.temp) - 273;
+            document.getElementById('spanMain').innerText = result.weather[0].main;
         }
-        if (this.currentPlayer === 'X') {
-            this.board[y][x].fill(this.currentPlayer);
-            this.currentPlayer = 'O';
-        } else {
-            this.board[y][x].fill(this.currentPlayer);
-            this.currentPlayer = 'X';
-        }
-        console.table(this.showBoard());
-    }
-
-    gameOver() {
-        return ['X','O'].some(curV => this.board.some(curS => curS.every(curE => curE.value === curV))
-        || this.board.some((curS, indS) => this.board.every(curE => curE[indS].value === curV))
-        || this.board.every((curE, indE) => this.board[indE][indE].value === curV)
-        || this.board.every((curE, indE) => this.board[indE][2 - indE].value === curV))
-    }
-}
-
-const board = new Board();
-
-board.turn(1,1); // X
-board.turn(2,1); // O
-board.turn(0,2); // X
-board.turn(1,0); // O
-board.turn(2,0); // X
-board.turn(1,2); // O
-
-console.log(board.gameOver());
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
+};

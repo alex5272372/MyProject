@@ -172,3 +172,9 @@ https://docs.google.com/document/d/1kSb7gv-06C0lngjceyJrUPDS1zS-d0imgL4Ah0D0YmU/
 11.06.2019 Arsenii
 чтобы быстрее сегодня все делать, зарегистрируйтесь на https://www.mongodb.com/cloud/atlas и на  https://dashboard.heroku.com/
 еще для более быстрого деплоя было бы неплохо иметь аккаунт на https://github.com/
+
+--------------------------------------------------------------------------------
+14.07.2019 Sergey
+https://www.youtube.com/watch?v=BFlg4aLh-_I
+https://www.youtube.com/watch?v=tXrjqo9b0x8
+https://www.youtube.com/watch?v=-72ufKCHWJs
